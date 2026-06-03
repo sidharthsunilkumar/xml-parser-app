@@ -40,7 +40,7 @@ services:
       RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672
       PREFETCH: "5"
     volumes:
-      - processor_logs:/app/logs # <--- Mount shared log volume
+      - processor_logs:/app/logs
     depends_on:
       - mongo
       - rabbitmq
@@ -55,7 +55,7 @@ services:
       RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672
       PREFETCH: "5"
     volumes:
-      - processor_logs:/app/logs # <--- Mount shared log volume
+      - processor_logs:/app/logs
     depends_on:
       - mongo
       - rabbitmq
@@ -70,7 +70,7 @@ services:
       RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672
       PREFETCH: "5"
     volumes:
-      - processor_logs:/app/logs # <--- Mount shared log volume
+      - processor_logs:/app/logs 
     depends_on:
       - mongo
       - rabbitmq
