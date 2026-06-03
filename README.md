@@ -20,7 +20,6 @@ The following will be available:
 |---|---|
 | Frontend dashboard | http://localhost:3000 |
 | Backend API | http://localhost:1080 |
-| RabbitMQ management UI | http://localhost:15672 (guest / guest) |
 
 To stop all services:
 
