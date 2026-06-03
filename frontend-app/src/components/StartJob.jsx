@@ -14,8 +14,9 @@ export default function StartJob({ navigate }) {
 
   async function handleFileUpload(file) {
     if (!file) return
-    if (!file.name.toLowerCase().endsWith('.csv')) {
-      setUploadError('Only .csv files are accepted')
+    const lowerName = file.name.toLowerCase()
+    if (!lowerName.endsWith('.csv') && !lowerName.endsWith('.xlsx')) {
+      setUploadError('Only .csv and .xlsx files are accepted')
       return
     }
     setUploading(true)
@@ -128,7 +129,7 @@ export default function StartJob({ navigate }) {
             <input
               ref={fileInputRef}
               type="file"
-              accept=".csv"
+              accept=".csv, .xlsx"
               style={{ display: 'none' }}
               onChange={onFileChange}
             />
@@ -164,9 +165,9 @@ export default function StartJob({ navigate }) {
               ) : (
                 <div className="sj-dz-state">
                   <span className="sj-dz-icon">📂</span>
-                  <span className="sj-dz-title">Drag &amp; drop a CSV file here</span>
+                  <span className="sj-dz-title">Drag &amp; drop a CSV or XLSX file here</span>
                   <span className="sj-dz-sub">or click to browse</span>
-                  <span className="sj-dz-hint">Accepts .csv files only</span>
+                  <span className="sj-dz-hint">Accepts .csv and .xlsx files only</span>
                 </div>
               )}
             </div>

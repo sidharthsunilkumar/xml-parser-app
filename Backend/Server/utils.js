@@ -1,4 +1,5 @@
 const fs = require("fs");
+const XLSX = require("xlsx");
 const { parse } = require("csv-parse");
 const path = require("path");
 const { randomUUID } = require("crypto");
@@ -17,17 +18,41 @@ const { enqueueTask, registerActiveJob, unregisterActiveJob } = require("./queue
 const DEFAULT_CSV = "XML List - Sheet1.csv";
 
 /**
- * Reads the list of XML feed URLs from a CSV file in the Data directory.
- * Pass a filename to use an uploaded file; omit it to use the default.
- * path.basename is used to prevent path-traversal attacks.
+ * Reads the list of XML feed URLs from either a CSV or XLSX file.
  * @param {string|null} filename - Optional uploaded filename.
  * @returns {Promise<string[]>} Resolves with an array of URL strings.
  */
 function readUrlsFromCsv(filename) {
   const safeName = filename ? path.basename(filename) : DEFAULT_CSV;
   const filePath = path.join(__dirname, "Data", safeName);
+
   return new Promise((resolve, reject) => {
     const urls = [];
+
+    // Check if file is XLSX
+    if (safeName.toLowerCase().endsWith(".xlsx")) {
+      try {
+        const workbook = XLSX.readFile(filePath);
+        // Extract data from the very first sheet
+        const firstSheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[firstSheetName];
+        
+        // Convert sheet to raw array of arrays (rows)
+        const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+        for (const row of rows) {
+          const url = row[0]?.toString().trim();
+          if (url && url.startsWith("http")) {
+            urls.push(url);
+          }
+        }
+        return resolve(urls);
+      } catch (err) {
+        return reject(err);
+      }
+    }
+
+    // Fallback/Default behavior: Process as Standard CSV stream
     fs.createReadStream(filePath)
       .pipe(parse({ trim: true }))
       .on("data", (row) => {
@@ -40,7 +65,6 @@ function readUrlsFromCsv(filename) {
       .on("error", reject);
   });
 }
-
 /**
  * Connects to MongoDB. Delegates to db_calls.initDb.
  * @param {string} uri - MongoDB connection URI.

@@ -21,7 +21,7 @@ const PORT = 1080;
 const DATA_DIR = path.join(__dirname, "Data");
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
-const csvUpload = multer({
+const fileUpload = multer({
   storage: multer.diskStorage({
     destination: (_req, _file, cb) => cb(null, DATA_DIR),
     filename: (_req, file, cb) => {
@@ -30,8 +30,19 @@ const csvUpload = multer({
     },
   }),
   fileFilter: (_req, file, cb) => {
-    const ok = /\.csv$/i.test(file.originalname);
-    cb(ok ? null : new Error("Only .csv files are allowed"), ok);
+    // Accepts .csv, .xlsx, or standard Excel/CSV MIME types
+    const okExt = /\.(csv|xlsx)$/i.test(file.originalname);
+    const okMime = [
+      "text/csv",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.ms-excel"
+    ].includes(file.mimetype);
+
+    if (okExt || okMime) {
+      cb(null, true);
+    } else {
+      cb(new Error("Only .csv and .xlsx files are allowed"), false);
+    }
   },
   limits: { fileSize: 10 * 1024 * 1024 },
 });
@@ -77,11 +88,11 @@ app.get("/parse", async (req, res) => {
 
 /**
  * POST /upload
- * Accepts a single .csv file and saves it to Backend/Data/.
+ * Accepts a single .csv or .xlsx file and saves it to Backend/Data/.
  * Returns { filename } on success.
  */
 app.post("/upload", (req, res) => {
-  csvUpload.single("file")(req, res, (err) => {
+  fileUpload.single("file")(req, res, (err) => {
     if (err) return res.status(400).json({ error: err.message });
     if (!req.file) return res.status(400).json({ error: "No file uploaded" });
     res.json({ filename: req.file.filename });
