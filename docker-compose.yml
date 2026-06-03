@@ -1,0 +1,91 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  backend:
+    build:
+      context: ./Backend/Server
+      dockerfile: Dockerfile
+    ports:
+      - "1080:1080"
+    environment:
+      MONGO_URL: mongodb://mongo:27017/xml_parser
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672
+    volumes:
+      - ./Backend/Server/Data:/app/Data
+    depends_on:
+      - mongo
+      - rabbitmq
+    restart: unless-stopped
+
+  processor-1:
+    build:
+      context: ./Backend/Processor
+      dockerfile: Dockerfile
+    environment:
+      MONGO_URL: mongodb://mongo:27017/xml_parser
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672
+      PREFETCH: "5"
+    volumes:
+      - processor_logs:/app/logs # <--- Mount shared log volume
+    depends_on:
+      - mongo
+      - rabbitmq
+    restart: unless-stopped
+
+  processor-2:
+    build:
+      context: ./Backend/Processor
+      dockerfile: Dockerfile
+    environment:
+      MONGO_URL: mongodb://mongo:27017/xml_parser
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672
+      PREFETCH: "5"
+    volumes:
+      - processor_logs:/app/logs # <--- Mount shared log volume
+    depends_on:
+      - mongo
+      - rabbitmq
+    restart: unless-stopped
+
+  processor-3:
+    build:
+      context: ./Backend/Processor
+      dockerfile: Dockerfile
+    environment:
+      MONGO_URL: mongodb://mongo:27017/xml_parser
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672
+      PREFETCH: "5"
+    volumes:
+      - processor_logs:/app/logs # <--- Mount shared log volume
+    depends_on:
+      - mongo
+      - rabbitmq
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
+  processor_logs:

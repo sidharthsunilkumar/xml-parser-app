@@ -1,0 +1,153 @@
+.at-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.at-main {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 32px;
+  box-sizing: border-box;
+}
+
+.at-header-pills {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+/* ── Cards ───────────────────────────────────────────────────── */
+.at-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e0e4ef;
+  border-radius: 12px;
+  padding: 20px 20px 20px 24px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.at-card.ok     { border-left: 5px solid #22c55e; }
+.at-card.failed { border-left: 5px solid #ef4444; }
+
+.at-card:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.13);
+  transform: scale(1.018) translateY(-3px);
+}
+
+.at-index {
+  font-size: 14px;
+  color: #6b7280;
+  width: 28px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.at-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.at-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.at-record-count {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.at-error-msg {
+  font-size: 15px;
+  color: #dc2626;
+}
+
+.at-source {
+  font-size: 15px;
+  color: #1f2937;
+  word-break: break-all;
+  margin-bottom: 8px;
+}
+
+.at-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.at-task-id {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #000000;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.at-field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ── Header Right Layout ──────────────────────────────────────── */
+.at-header-right {
+  margin-left: auto; /* Pushes the entire right section to the far right */
+  display: flex;
+  align-items: center;
+  gap: 20px;         /* Adds a clean gap between the pills and the dropdown */
+}
+
+.at-header-pills {
+  margin-left: 0;    /* Resets the old styling so it aligns nicely with the dropdown */
+  display: flex;
+  gap: 8px;
+}
+
+/* ── Dropdown Styling ────────────────────────────────────────── */
+.status-dropdown {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.status-dropdown:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Screen reader only utility for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

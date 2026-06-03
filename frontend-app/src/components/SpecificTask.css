@@ -1,0 +1,310 @@
+.st-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.st-main {
+  flex: 1;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px 32px 48px;
+  box-sizing: border-box;
+}
+
+/* ── Info bar ────────────────────────────────────────────────── */
+.st-info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  background: #ffffff;
+  border: 1px solid #e0e4ef;
+  border-radius: 12px;
+  padding: 20px 26px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.st-info-item {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  padding: 0 12px;
+}
+
+.st-info-item:first-child {
+  padding-left: 0;
+}
+
+.st-info-item:last-child {
+  padding-right: 0;
+}
+
+.st-info-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #000000;
+  font-weight: 700; /* Made all label texts bold */
+}
+
+.st-info-code {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: #000000;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.st-info-val {
+  font-size: 18px;
+  font-weight: 400; /* Changed from 700 to 400 to make text normal weight */
+  color: #000000;
+}
+
+/* ── Table ───────────────────────────────────────────────────── */
+.st-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e0e4ef;
+  border-radius: 12px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+}
+
+.st-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  table-layout: fixed;
+}
+
+.st-table thead th {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0effe 40%, #dbeafe 100%);
+  padding: 13px 16px;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1e40af;
+  font-weight: 700;
+  border-bottom: 1px solid #cfe0f8;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  .st-table thead th {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e0effe 40%, #dbeafe 100%);
+    color: #1e40af;
+    border-bottom-color: #cfe0f8;
+  }
+}
+
+.st-table thead th:first-child { border-radius: 12px 0 0 0; }
+.st-table thead th:last-child  { border-radius: 0 12px 0 0; }
+
+.st-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+
+.st-table tbody tr:last-child { border-bottom: none; }
+.st-table tbody tr:hover { background: #f5f7fa; }
+
+.st-table tbody td {
+  padding: 13px 16px;
+  vertical-align: top;
+  color: #000000;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Column widths */
+.st-th-num, .st-td-num   { width: 48px; text-align: center; }
+.st-th-pub,  .st-td-pub  { width: 110px; white-space: nowrap; font-size: 14px; }
+.st-th-author,.st-td-author { width: 130px; }
+.st-td-title { font-weight: 500; }
+.st-td-summary { font-size: 14px; }
+.st-th-link, .st-td-link { width: 52px; text-align: center; }
+
+.st-table tbody .st-td-num,
+.st-table tbody .st-td-pub,
+.st-table tbody .st-td-author,
+.st-table tbody .st-td-title,
+.st-table tbody .st-td-summary {
+  color: #000000;
+}
+
+.st-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  /* Very light blue matching the table thead gradient properties */
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0effe 40%, #dbeafe 100%); 
+  color: #1e40af; /* Dark blue arrow color */
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: opacity 0.15s;
+}
+
+.st-link-btn:hover { 
+  opacity: 0.85; 
+}
+
+@media (prefers-color-scheme: dark) {
+  .st-link-btn { 
+    background: linear-gradient(135deg, #f0f7ff 0%, #e0effe 40%, #dbeafe 100%); 
+    color: #1e40af; 
+  }
+}
+
+.st-table tbody .st-null { color: #000000; }
+
+/* ── Pagination — explicit colors so they're always legible ───── */
+.st-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pg-btn {
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  background: #ffffff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+}
+
+.pg-btn:hover:not(:disabled) {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.15);
+}
+
+.pg-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.pg-numbers {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.pg-num {
+  width: 42px;
+  height: 42px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid #c7d3e8;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #1e293b;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+}
+
+.pg-num:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.15);
+}
+
+.pg-num.active {
+  background: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+  font-weight: 700;
+  box-shadow: 0 3px 12px rgba(29, 78, 216, 0.35);
+}
+
+.pg-ellipsis {
+  padding: 0 8px;
+  color: #94a3b8;
+  font-size: 17px;
+}
+
+/* ── Failed task details ─────────────────────────────────────── */
+.st-failed-panel {
+  background: #ffffff;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.st-failed-header {
+  margin-bottom: 20px;
+}
+
+.st-failed-details {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.st-failed-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px 20px;
+  align-items: start;
+}
+
+.st-failed-row dt {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #4b5563;
+  font-weight: 700; /* Added bolding to match requested info layout look */
+}
+
+.st-failed-row dd {
+  margin: 0;
+  font-size: 15px;
+  color: #000000;
+  word-break: break-word;
+}
+
+.st-failed-row dd code {
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.st-failed-row dd a {
+  color: #1d4ed8;
+}
+
+.st-failed-row-error dd {
+  color: #b91c1c;
+  font-weight: 500;
+}
+
+.st-failed-code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #000000;
+  background: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}

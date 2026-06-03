@@ -1,0 +1,972 @@
+[
+  {
+    "source": "https://1password.com/blog/index.xml",
+    "title": "Vercel’s Tom Occhino on why access control is product architecture",
+    "link": "https://1password.com/blog/secure-ai-development",
+    "published": "Tue, 02 Jun 2026 00:00:00 GMT",
+    "author": "Chris Fowler",
+    "summary": "Zero-Shot Learning is a podcast about how AI gets built, secured, and deployed. Hosted by Nancy Wang, 1Password CTO, and Dev Tagare, Senior Director of Engineering at Google, its a builders view of the architecture and the complex choices it takes to ship with AI. As Chief Product Officer at Vercel, Tom Occhino joined Zero-Shot Learning to discuss how AI is reshaping the developer workflow, from frontend architecture to v0, Vercels production-ready AI coding assistant. What started as a conversation about AI-assisted development became a case for access control as a design decision, not a security afterthought. How AI changes the developer security model As part of the team that built and shipped React at Facebook, Tom helped replace MVC patterns with a component-based model that changed how an entire generation of engineers reasoned about interfaces. He calls whats happening now with AI-assisted development \"a fundamentally different approach to software.\" Where the earlier shift changed how developers organized their thinking, this one changes who or what creates and operates software. In the past, a developer working on component architecture brought years of professional judgment to those decisions. Today, a non-technical worker using an agent in that same workflow does not, and when that agent can call tools, the gap cant be covered by training. Authorization has to be built into the architecture. Vercels AI SDK makes it easier for agents to call tools, which adds to its appeal, but also means it requires stronger safeguards. \"Putting on my security hat,\" Nancy said, \"how do you make sure that these agents dont get exploited?\" \"Under no circumstances are we encouraging code execution on the client,\" Tom replied. Vercel built Sandbox because agent-driven development requires an environment without access to production secrets, environment variables, or configuration, so untrusted code doesn’t touch production by default. Sandbox limits what an agent can read or modify locally. Outbound access needs authZ policy too. \"There are outgoing requests that come from that sandbox,\" Tom said. \"Who are they allowed to talk to, and in what capacity?\" Tom drew each boundary deliberately, inbound and outbound, before anything shipped. An agent that cant read your production secrets can still make outbound calls to wherever it chooses. One boundary without the other still leaves the agent free to act where it shouldnt. When everyone builds, access must be secure by default To secure the new group of people who can build with AI, products must be secure by default. Especially as you open access to these tools to many more people who lack the security fundamentals from the first 15 or 20 years of their career,\" Tom said, \"we need to be creating systems that are secure by default and safe by default.\" Imagine that a product manager wants to track customer health without waiting on the analytics team and builds a dashboard overnight using an AI-assisted coding platform. The AI pulls account data from Salesforce, usage metrics from Mixpanel, and support ticket volume from Zendesk. To make it work quickly, the PM pastes API keys and account tokens directly into the app. Those credentials carry the PMs full permissions across all three platforms, including access to customer records the dashboard will never need. They share the link with their team, and suddenly several people are querying live customer data through an app nobody in security knows exists, using credentials that wont expire , with an agent that cant be attributed to individual users, and that has no revocation path if the PM leaves the company. \"We need that untrusted code execution environment that does not have access to production secrets,\" Tom said. In our example, the PMs dashboard is what it looks like when permissions are inherited by default. Its an open area of research, Tom acknowledged, and one 1Password is already working through . How 1Password makes the secure path the easy path \"Youve got to make the paved path the easy path, because if security gets hard, it risks becoming an afterthought,” Nancy said. “Make the secure way the easy way” is the design logic Tom applied to Vercel Sandbox, understanding that if the secure option requires extra steps, most developers wont take them. The insecure way is already documented in many codebases. An SSH key is a plain-text file on a developer terminal. API tokens are hardcoded into scripts. Environment variables are inherited by anything running in that environment with no encryption, access controls, or audit trail. Just a file. 1Password Unified Access serves as the authorization layer between the agent and the systems it connects to. Credentials move from vault to runtime without passing through a file, a config, or a clipboard, and are evaluated in context when access is requested, not carried over from setup. The shift from always-on access that developers must manually provision to just-in-time authorization is where the agent gets only what it needs for the task at hand and nothing more. There are no keys to rotate, no authorization to revoke, and nothing to explain to a security team after the fact. It’s a change that fundamentally reduces risk and manual effort from developer workflows. 1Password Unified Access helps teams discover, secure, and audit access across humans, agents, and machine identities, so organizations can confidently transition from human-driven workflows to agentic ones. It gives teams a single place to define what agents can reach, scope credentials to what is needed, and revoke access when work is done. Vercels integration with 1Password brings agentic access control directly into the cloud sandbox environment that Tom described. An agent calling tools through Vercels AI SDK needs credentials to do useful work. Those credentials dont have to be long-lived or broadly scoped. They dont have to live in the agents context at all. Tom calls Vercels platform strategy \"the operating system of agents.\" The authorization decisions made at the design stage become the authorization model that everyone using the product inherits. Designing access control for agents and AI-assistants In \"We solved the blank canvas problem,\" Tom joined Zero-Shot Learning to talk about generating ideas faster with AI, and the conversation arrived at why that requires designing authorization from the start. Access control has always been a requirement; whats changing is when in the process it gets built. Watch the full episode with Vercel’s Tom Occhino Tom Occhino joined Nancy Wang and Dev Tagare on Zero-Shot Learning, 1Password's podcast on agentic AI and the people building it. Watch now",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "7015a67e-d2a2-40b4-b2fa-67de70a725f6"
+  },
+  {
+    "source": "https://huggingface.co/blog/feed.xml",
+    "title": "Holo3.1: Fast & Local Computer Use Agents",
+    "link": "https://huggingface.co/blog/Hcompany/holo31",
+    "published": "Tue, 02 Jun 2026 14:13:23 GMT",
+    "author": null,
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "2cb0e7cc-3599-440f-802f-ab42292b9c12"
+  },
+  {
+    "source": "https://in.ign.com/feed.xml",
+    "title": "2XKO - Official Senna Gameplay Reveal Trailer",
+    "link": "https://in.ign.com/2xko/262275/2xko-official-senna-gameplay-reveal-trailer",
+    "published": "Tue, 02 Jun 2026 15:23:31 +0000",
+    "author": "IGN India",
+    "summary": "Dont miss the Senna gameplay reveal trailer for 2XKO, the 2v2 Tag Fighter developed by Riot Games! Senna wields both light and dark, both having their uses in combat with light featuring more projectile heavy zoning, while dark allows Senna to rush her opponent down. Senna joins the 2XKO roster on June 9th for PlayStation 5 (PS5), Xbox Series X|S, and PC (Steam).",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "cbe9bcb4-b938-46fb-89ad-f2ab3d4f58e2"
+  },
+  {
+    "source": "https://mediagazer.com/feed.xml",
+    "title": "X launches a React with Video feature on iOS that targets creators and is being pitched as a multimedia alternative to the Repost and Quote Post functions (Sarah Perez/TechCrunch)",
+    "link": "https://mediagazer.com/260602/p8#a260602p8",
+    "published": "Tue, 02 Jun 2026 11:35:00 -0400",
+    "author": null,
+    "summary": "Sarah Perez / TechCrunch : X launches a React with Video feature on iOS that targets creators and is being pitched as a multimedia alternative to the Repost and Quote Post functions On Tuesday, Elon Musk-owned social network X launched a new feature, React with Video, that aims to expand the types of commentary on the platform.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "ef9a3ad2-f6a6-431b-b38d-a26ec9fa664e"
+  },
+  {
+    "source": "https://techmeme.com/feed.xml",
+    "title": "Internal post: Guy Rosen, Meta's chief information security officer who previously oversaw Meta's election integrity work, is departing in the coming months (Kurt Wagner/Bloomberg)",
+    "link": "https://www.techmeme.com/260602/p27#a260602p27",
+    "published": "Tue, 02 Jun 2026 11:25:02 -0400",
+    "author": null,
+    "summary": "Kurt Wagner / Bloomberg : Internal post: Guy Rosen, Meta's chief information security officer who previously oversaw Meta's election integrity work, is departing in the coming months Guy Rosen, Meta Platforms Inc.'s chief information security officer who previously oversaw the company's election integrity work, is departing in the coming months.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "bdccd7bb-0620-4e92-b90f-296913e8ba8f"
+  },
+  {
+    "source": "https://thehockeynews.com/feed/THNHOME/full.xml",
+    "title": "Blue Jackets' Zach Werenski Beats Makar And Dahlin To Win NHL's Norris Trophy",
+    "link": "https://thehockeynews.com/news/latest-news/blue-jackets-zach-werenski-beats-makar-and-dahlin-to-win-nhls-norris-trophy",
+    "published": "2026-06-02T15:38:37.958Z",
+    "author": "Jonathan Tovell",
+    "summary": "Zach Werenski has won the Norris Trophy for the first time in his career. He led the Columbus Blue Jackets in scoring for the second straight season.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "664539de-a7c6-4d6d-9588-80604e0fd670"
+  },
+  {
+    "source": "https://www.3djuegos.com/feedburner.xml",
+    "title": "La mejor ciencia ficción posapocalíptica de Apple TV con Rebecca Ferguson vuelve en 31 días. Su tráiler garantiza un punto más de intensidad como novedad",
+    "link": "https://www.3djuegos.com/tv-series/noticias/mejor-ciencia-ficcion-posapocaliptica-apple-tv-rebecca-ferguson-vuelve-31-dias-su-trailer-garantiza-punto-intensidad-como-novedad",
+    "published": "Tue, 02 Jun 2026 16:45:40 +0200",
+    "author": "Marcos Yasif",
+    "summary": "No podemos decir que Silo sea una serie lenta. Pero, desde luego, la ambiciosa propuesta de ciencia ficción de Apple TV protagonizada por Rebecca Ferguson no se ha caracterizado precisamente por acelerar su ritmo más de lo necesario. La serie ha apostado desde el principio por un ritmo calculado, denso y atmosférico, donde cada revelación pesa y cada silencio importa. En su tercera temporada, sin embargo, parece que los acontecimientos sí que van a coger velocidad. {\"videoId\":\"xacsu4c\",\"autoplay\":true,\"title\":\"Tráiler de Silo | Temporada 3\", \"tag\":\"Silo\", \"duration\":\"158\"} Eso es, al menos, lo que nos deja ver el tráiler oficial de los nuevos capítulos de esta serie de ciencia ficción con ambientación posapocalíptica, que, pese a narrar la vida de los últimos supervivientes de la humanidad —o eso creíamos al principio—, confinados en un refugio durante años y años, muestra cómo parece que se les está acabando el tiempo . ¿Para qué? No lo sabemos (o bueno, sí: está el libro para los impacientes), pero está claro que tendrán que darse prisa si no quieren que un destino fatal les alcance. Y todo ello, leemos en la sinopsis de la tercera temporada de Silo, con una Juliette Nichols (Ferguson) que ha regresado a su hogar con pérdida de memoria. ¿Logrará recuperarse a tiempo? Mientras en el pasado... una conspiración Si has visto la segunda temporada de Silo al completo, ya sabréis que, al final del último episodio, viajamos al pasado o a nuestro presente, según se mire. Esta tercera temporada tendrá que expandir esta subtrama en la que la periodista Helen Drew (Jessica Henwick) y el congresista Daniel Keene (Ashley Zukerman) descubren una gran conspiración que los lleva a una cadena de eventos con consecuencias catastróficas e irreversibles que darán como resultado el mundo posapocalíptico en el que se ambienta el drama sci-fi. Me recuerda un poco a los flashbacks que vemos en Fallout de Prime Video , o Paradise , y pueden ayudar a que no se sienta demasiado repetitivo el show en este que será su tercer año. Pero esto sigue siendo Silo. Sigue siendo la historia de Juliette Nichols y el resto de los pocos supervivientes de la humanidad en un mundo que les resulta totalmente misterioso. Ya han descubierto algunas cosas a lo largo de estos dos años de historia, pero queda mucho por conocer: hilos que resolver y enigmas en los que profundizar. Y lo haremos a partir del 3 de julio con el estreno del primer episodio de los 10 que componen la tercera temporada, seguido de nuevos capítulos los viernes hasta su cierre fechado para el 4 de septiembre. ¿Lo mejor? Habrá una cuarta y última tanda de episodios que nadie nos quitará y que confirma el respeto de Apple TV por las serie de ciencia ficción. De hecho, el viernes dijimos hasta luego a Para toda la humanidad, y hola a su spin-off . En 3DJuegos | La historia de la nueva película de El Señor de los Anillos ya se contó hace 16 años con 3.000 euros, y la puedes ver gratis. The Hunt for Gollum En 3DJuegos | Es oficial, Zack Snyder desafía las normas y dirigirá el remake de una obra maestra de la ciencia ficción de John Carpenter (function() { window._JS_MODULES = window._JS_MODULES || {}; var headElement = document.getElementsByTagName('head')[0]; if (_JS_MODULES.instagram) { var instagramScript = document.createElement('script'); instagramScript.src = 'https://platform.instagram.com/en_US/embeds.js'; instagramScript.async = true; instagramScript.defer = true; headElement.appendChild(instagramScript); } })(); - La noticia La mejor ciencia ficción posapocalíptica de Apple TV con Rebecca Ferguson vuelve en 31 días. Su tráiler garantiza un punto más de intensidad como novedad fue publicada originalmente en 3DJuegos por Marcos Yasif .",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "27fa8633-2a33-4fc8-827b-3108cabeccd8"
+  },
+  {
+    "source": "https://www.androidcentral.com/feeds.xml",
+    "title": "Motorola Edge 2026 and Moto Buds 2 double down on comfort, battery life, and practicality",
+    "link": "https://www.androidcentral.com/phones/motorola/motorola-edge-2026-and-moto-buds-2-double-down-on-comfort-battery-life-and-practicality",
+    "published": "Tue, 02 Jun 2026 13:28:45 +0000",
+    "author": "Jay Bonggolto",
+    "summary": "Motorola’s Edge 2026 skips the AI hype and focuses on what matters: a lighter design, bright display, solid cameras, long battery life, and surprisingly capable Moto Buds 2.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "d3879fcc-35b2-41d7-80b0-32eb98c24bc3"
+  },
+  {
+    "source": "https://www.anduril.com/feed.xml",
+    "title": "Powering Integrated Operations at Flytrap 5.0",
+    "link": "https://www.anduril.com/news/powering-integrated-operations-at-flytrap-5-0",
+    "published": "Wed, 27 May 2026 00:00:00 GMT",
+    "author": null,
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "274a58fe-15e3-4f91-8370-86861a6da72c"
+  },
+  {
+    "source": "https://www.arkansasairandmilitary.com/blog-feed.xml",
+    "title": "That’s All, Brother",
+    "link": "https://www.arkansasairandmilitary.com/post/that-s-all-brother-1",
+    "published": "Fri, 29 May 2026 12:22:40 GMT",
+    "author": "John Townsend",
+    "summary": "Courtesy of That's All Brother and David M. Barrera In honor of our Warbird Weekend, we are reposting this classic blog from 2024. This weekend is a very special one for the Arkansas Air and Military Museum as we have the honor of hosting a legend. The C-47 Skytrain, That’s All Brother, will be the star of our Warbird Weekend starting today and continuing through Sunday, so this Artifact Friday will be dedicated to it. C-47s played an important role in World War II. Designed and produced by...",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "1a71e80b-a529-4027-abea-68814e009c10"
+  },
+  {
+    "source": "https://www.babycenter.com/bc-latest-content.xml?discover",
+    "title": "We have the official Amazon Prime Day 2026 dates — and tips to save more",
+    "link": "https://www.babycenter.com/baby-products/deals/amazon-prime-day-deals-2026_41003862",
+    "published": "Tue, 02 Jun 2026 00:00:00 GMT",
+    "author": "Leah Rocketto",
+    "summary": "Our favorite Amazon Prime Day shopping tips to maximize savings during the four-day sale.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "7204c2b6-2269-44b5-bbf1-54dc850cde3b"
+  },
+  {
+    "source": "https://www.buzzfeed.com/in/index.xml",
+    "title": "17 Wholesome Posts That Will Definitely Restore Your Faith In Humanity",
+    "link": "https://www.buzzfeed.com/mugdhakusray1/17-photos-that-will-brighten-your-day",
+    "published": "Tue, 19 Dec 2023 09:31:02 -0500",
+    "author": null,
+    "summary": "My heart is so full.:’) View Entire Post",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "5e25ab24-2f2f-4bc9-a11b-153ef433137d"
+  },
+  {
+    "source": "https://www.cinemablend.com/feeds.xml",
+    "title": "The Person MrBeast Gifted A Private Jet To Is Now Tied To A Serious Crime",
+    "link": "https://www.cinemablend.com/television/jabari-brown-mrbeast-gifted-private-jet-now-tied-to-serious-crime",
+    "published": "Tue, 02 Jun 2026 15:32:06 +0000",
+    "author": "Mick Joest",
+    "summary": "This is wild.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "c87bc0f6-7ed1-4560-af67-a3ff7dad2a7b"
+  },
+  {
+    "source": "https://www.complex.com/index.xml",
+    "title": "Sauce Walka's Ex Claims He Damaged a Maybach Drake Bought Her",
+    "link": "https://www.complex.com/music/a/markelibert/sauce-walka-ex-maybach-damage",
+    "published": "Tue, 02 Jun 2026 15:33:55 GMT",
+    "author": "Mark Elibert",
+    "summary": "The mother of Sauce Walka's child shared a series of social media posts alleging Drake purchased her a luxury Maybach, which she said the Houston rapper destroyed.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "cbe7bd69-ea46-4fb1-8784-b11b62605d6a"
+  },
+  {
+    "source": "https://www.digitalcameraworld.com/feeds.xml",
+    "title": "Camp Snap 2 review: The viral screen-free camera is back – and this time it’s packing in more film-like filters",
+    "link": "https://www.digitalcameraworld.com/cameras/compact-cameras/camp-snap-2-review-the-viral-screen-free-camera-is-back-and-this-time-its-packing-in-more-film-like-filters",
+    "published": "Tue, 02 Jun 2026 15:00:00 +0000",
+    "author": "Hillary K. Grigonis",
+    "summary": "The Camp Snap 2 has all the screen-free charm of the original, with fewer annoying quirks",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "0e12e570-a03a-4b97-8c52-6021bfad758c"
+  },
+  {
+    "source": "https://www.gamesradar.com/feeds.xml",
+    "title": "The more I hear about Far Cry 7, the more I worry about it",
+    "link": "https://www.gamesradar.com/games/far-cry/the-more-i-hear-about-far-cry-7-the-more-i-worry-about-it/",
+    "published": "Tue, 02 Jun 2026 15:30:00 +0000",
+    "author": "Jasmine Gould-Wilson",
+    "summary": "Opinion | If rumors hold true, I'm not sure I want the FPS game Ubisoft is cooking",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "cc8ce2bf-37c5-48c9-8389-c8147b54ea38"
+  },
+  {
+    "source": "https://www.gfinityesports.com/feed.xml",
+    "title": "Why You Don’t Need to Be a James Bond Fan to Enjoy 007 First Light",
+    "link": "https://www.gfinityesports.com/article/why-you-dont-need-to-be-a-james-bond-fan-to-enjoy-007-first-light",
+    "published": "Tue, 02 Jun 2026 14:32:47 GMT",
+    "author": "Alexandria Lopez",
+    "summary": "Wondering if 007 First Light is worth it for franchise newbies? Read why IO Interactive's James Bond origin story is perfect for every gamer.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "d9d46a33-08ce-45fc-9adc-14ef0a16c719"
+  },
+  {
+    "source": "https://www.homesandgardens.com/feeds.xml",
+    "title": "The 7 Most Exciting Design Trends Emerging From WOW!house 2026",
+    "link": "https://www.homesandgardens.com/interior-design/wowhouse-trends-2026",
+    "published": "Tue, 02 Jun 2026 14:00:30 +0000",
+    "author": "Hebe Hatton",
+    "summary": "WOW!house returns for 2026 with 21 rooms of design inspiration, and these are the key trends emerging from this year's spaces",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "dd2a7a8c-a2c5-4aa2-be63-d7686cc24983"
+  },
+  {
+    "source": "https://www.laptopmag.com/feeds.xml",
+    "title": "A great laptop under $500 is hard to find — here are the 4 best budget laptops I recommend in 2025",
+    "link": "https://www.laptopmag.com/articles/best-laptop-under-500",
+    "published": "Fri, 28 Nov 2025 19:50:00 +0000",
+    "author": "Joanna Nelius",
+    "summary": "We've found the best budget laptops under $500 in every form factor: clamshells, Chromebooks, and 2-in-1 hybrids.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "ee4856a8-e996-470a-9dd0-e4fad33a6fc3"
+  },
+  {
+    "source": "https://www.livingetc.com/feeds.xml",
+    "title": "6 Extraordinary Design-Forward Queer Spaces in London to Keep Inspired at Day and Night This Pride Month",
+    "link": "https://www.livingetc.com/features/queer-spaces-london",
+    "published": "Tue, 02 Jun 2026 08:30:00 +0000",
+    "author": "Gilda Bruno",
+    "summary": "From beloved bakeries to bar-cum-galleries and, of course, clubs, June in the capital has never looked better",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "9ee9f444-f6ad-43a2-b339-3370254a8821"
+  },
+  {
+    "source": "https://www.malwarebytes.com/blog/feed/index.xml",
+    "title": "23andMe exposed genetic information of millions, lawsuit says",
+    "link": "https://www.malwarebytes.com/blog/data-breaches/2026/06/23andme-exposed-genetic-information-of-millions-lawsuit-says",
+    "published": "Tue, 02 Jun 2026 09:53:19 GMT",
+    "author": null,
+    "summary": "What began with stolen passwords ended with the exposure of nearly seven million users' DNA-related data, according to California's lawsuit.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "afab9611-63e1-4bca-b806-84145e3a0c9b"
+  },
+  {
+    "source": "https://www.netlify.com/changelog/feed.xml",
+    "title": "Claude Opus 4.8 now available in AI Gateway and Agent Runners",
+    "link": "https://www.netlify.com/changelog/claude-opus-4-8-ai-gateway-agent-runners/",
+    "published": "Thu, 28 May 2026 00:00:00 GMT",
+    "author": null,
+    "summary": "Anthropic’s Claude Opus 4.8 model is now available through Netlify’s AI Gateway and Agent Runners with zero configuration required. Use the Anthropic SDK directly in your Netlify Functions without managing API keys or authentication. The AI Gateway handles everything automatically. Here’s an example using the Claude Opus 4.8 model: import Anthropic from @anthropic-ai/sdk; export default async () => { const anthropic = new Anthropic(); const response = await anthropic.messages.create({ model: claude-opus-4-8, max_tokens: 4096, messages: [ { role: user, content: How can AI improve my coding? } ] }); return new Response(JSON.stringify(response), { headers: { Content-Type: application/json } }); }; Claude Opus 4.8 is available for all Function types and Agent Runners. You get automatic access to Netlify’s caching, rate limiting, and authentication infrastructure. Learn more in the AI Gateway documentation and Agent Runners documentation.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "b5a50614-cc0d-4885-b9f8-0d22fe06f10b"
+  },
+  {
+    "source": "https://www.nitinguptadfw.com/blog-feed.xml",
+    "title": "Best Buyer Agent Rockwall &#38; Heath TX 2026  - Dallas Fort Worth Relocation Real Estate Agent",
+    "link": "https://www.nitinguptadfw.com/post/best-buyer-agent-rockwall-heath-tx-2026-dallas-fort-worth-relocation-real-estate-agent",
+    "published": "Tue, 26 May 2026 01:45:06 GMT",
+    "author": "Nitin Gupta, CRS, REALTOR",
+    "summary": "Best Buyer Agent Rockwall Heath TX 2026 Lake Ray Hubbard waterfront. Rockwall ISD A-rated. $400K–$2M+ from standard family homes to premium lakefront estates in Heath TX. The east Dallas lakeside suburb that families from the Carolinas, Tennessee, and the Gulf Coast recognize as the lifestyle equivalent of what they left — except the taxes are lower and the school district is stronger.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "c9392c46-0ebf-4912-be13-2f3a57ee98a8"
+  },
+  {
+    "source": "https://www.pcgamer.com/feeds.xml",
+    "title": "Minecraft dappled forest update: everything you need to know about the next new biome",
+    "link": "https://www.pcgamer.com/games/survival-crafting/minecraft-dappled-forest-update/",
+    "published": "Tue, 02 Jun 2026 15:31:13 +0000",
+    "author": "Kara Phillips",
+    "summary": "The third game drop of 2026 will add an autumnal biome and yet another new set of wood blocks.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "d8957c52-1c17-418f-ab3d-32c697358448"
+  },
+  {
+    "source": "https://www.sony.com/en/SonyInfo/News/Press/data/pressrelease_for_top.xml",
+    "title": "Sony Once Again Recognized as a Leader in Supplier Engagement",
+    "link": "https://www.sony.com/en/SonyInfo/News/Press/202605/26-013E/index.html",
+    "published": "Thu, 28 May 2026 15:00:00 +0900",
+    "author": null,
+    "summary": "Tokyo, Japan — Sony Group Corporation (Sony) has received the highest rating of \"A\" according to CDP's Supplier Engagement Assessment, which evaluates corporate supply chain engagement on climate issues, and has also been selected as a \"Supplier Engagement Leader.\" This marks the eighth year in a row and the ninth time that Sony has received this recognition.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "af865fe6-2150-44c8-b4e9-cb7783b9d9ba"
+  },
+  {
+    "source": "https://www.spacewar.com/missiledefense.xml",
+    "title": "Leonardo DRS infrared payloads selected for SDA Tracking Layer Tranche 3",
+    "link": "https://www.spacewar.com/reports/Leonardo_DRS_infrared_payloads_selected_for_SDA_Tracking_Layer_Tranche_3_999.html",
+    "published": "Sat, 07 FEB 2026 10:19:13 AEST",
+    "author": null,
+    "summary": "Los Angeles CA (SPX) Jan 29, 2026 - Leonardo DRS has been awarded a subcontract to deliver advanced infrared mission payloads for the Space Development Agency's Tracking Layer Tranche 3, expanding space-based support for the U.S. missile defense architecture. The contract positions the company as the space-based mission payload provider for TRKT3, a critical element in the U.S. military program to detect, track, and cue defenses against ballistic missiles and hypersonic weapons across the globe. Under the subcontract, Leonardo DRS will design, build, integrate, and test a new generation of infrared mission payloads tailored to the Tracking Layer Tranche 3 satellites. These payloads are intended to provide persistent, global coverage, enhancing the constellation's ability to follow missile threats from initial launch through midcourse flight and interception. The TRKT3 capability is designed to deliver precise, space-based sensing data that can feed fire-control solutions for missile interceptor systems. The infrared sensors will support continuous detection and tracking of both traditional ballistic missiles and maneuvering hypersonic weapons that travel at high speeds and along unpredictable trajectories. By operating in space, the TRKT3 payloads will help close gaps left by terrestrial and airborne sensors, particularly over wide ocean areas and remote regions. The system aims to offer early warning and precise tracking data over the full threat timeline, from boost to terminal engagement. \"This award recognizes our innovative best-in-class technology, and continued investment in advanced space-based capabilities for programs such as the TRKT3 mission,\" said John Baylouny, Leonardo DRS Chief Executive Officer. He said these investments allow engineering and manufacturing teams to push the boundaries of advanced sensing and space payload production in support of key national security missions. \"As the payload provider, DRS is incredibly proud to support this missile defense mission to defend the homeland,\" said Jerry Hathaway, senior vice president and general manager of the Leonardo DRS Electro-Optical and Infrared Systems business unit. He said the award builds on next-generation technologies created by the company's space sensing and engineering organizations, along with its established experience in complex mission payload design and manufacturing. Leonardo DRS is already a major supplier of cooled and uncooled infrared systems to U.S. and allied defense customers, with operational systems fielded across ground, maritime, airborne, and space domains. The company emphasizes advanced sensing as a strategic focus area, combining multi-domain sensors with secure communications and laser-based mission technologies. These capabilities support a range of defense efforts, including Golden Dome, counter-uncrewed aircraft systems, autonomous maritime protection, and both mounted and dismounted ground combat systems. The TRKT3 work reinforces the company's role in expanding the space layer of the missile defense enterprise as demand grows for resilient, proliferated constellations capable of tracking emerging threats. By integrating high-performance infrared payloads into the SDA Tracking Layer architecture, Leonardo DRS aims to help provide faster, more accurate warning and tracking data to commanders and interceptor operators. The company presents the subcontract as another step in its broader strategy to deliver multi-domain sensing solutions that connect platforms and shooters across a networked battlespace. Forward-looking statements in the company's communications caution that contract performance, schedules, and product development outcomes are subject to risks and uncertainties that could cause actual results to differ from current expectations. Leonardo DRS notes that its reputation as a trusted defense technology provider relies on practical innovation, quality execution, and the ability to meet demanding mission requirements for U.S. and allied customers.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "ce81d84d-f26c-4970-ac49-1d0ab0ef01f6"
+  },
+  {
+    "source": "https://www.t3.com/feeds.xml",
+    "title": "YETI's latest collection looks like someone covered its drinkware in camping stickers and I'm kind of into it",
+    "link": "https://www.t3.com/active/outdoors/yeti-whippersnappers-collection-early-access-0626",
+    "published": "Tue, 02 Jun 2026 15:14:18 +0000",
+    "author": "Matt Kollat",
+    "summary": "The Whippersnappers Collection brings illustrated outdoor graphics to 12 YETI drinkware and food storage products.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "032fade6-b500-4922-b855-8a8b5efc01f3"
+  },
+  {
+    "source": "https://www.techradar.com/feeds.xml",
+    "title": "Shopping Prime Day on 26 June? Grab this affordable VPN to protect your data—and score a free Amazon gift card while you're at it.",
+    "link": "https://www.techradar.com/vpn/vpn-services/shopping-prime-day-on-26-june-grab-this-affordable-vpn-to-protect-your-data-and-score-a-free-amazon-gift-card-while-youre-at-it",
+    "published": "Tue, 02 Jun 2026 15:30:00 +0000",
+    "author": "Rob Dunne",
+    "summary": "There's less than 24 hours left to secure your data and grab a freebie",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "8d27dcd4-8e77-4a98-93ed-dee6172aeeef"
+  },
+  {
+    "source": "https://www.thebroadwaybeat.com/blog-feed.xml",
+    "title": "TITANIQUE Team in Panic After Realizing They Misspelled Ship's Name",
+    "link": "https://www.thebroadwaybeat.com/post/titanique-panic-misspelled-ship-name",
+    "published": "Wed, 13 May 2026 04:00:00 GMT",
+    "author": "Broadway Beat",
+    "summary": "by Brady Thomas. @cbradyt. NEW YORK, NY. — This just in: the halls of ATG Entertainment are buzzing with panic and confusion after realizing that Titanique, their Tony-nominated new musical of the season, is facing down an iceberg-sized problem heading into award season: they totally got the ship’s name wrong. “HOW THE HELL DID THIS GET PAST US FOR SO LONG?” screamed Sam Dietz, a mid-level brand manager on the Titanique account. “I just assumed that SOMEBODY would have picked up on this by...",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "84f272f8-974c-4f12-8adc-6c7d42a1da6e"
+  },
+  {
+    "source": "https://www.tomsguide.com/feeds.xml",
+    "title": "Prime Day doesn't start until June 23, but these 31 deals under $50 are already worth shopping",
+    "link": "https://www.tomsguide.com/sales-events/prime-day-doesnt-start-until-june-23-but-these-31-deals-under-usd50-are-already-worth-shopping",
+    "published": "Tue, 02 Jun 2026 15:06:16 +0000",
+    "author": "Olivia Halevy",
+    "summary": "Early Prime Day deals just dropped on Amazon. Here are my favorite finds under $50 from top brands.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "70d48c38-90b8-4eca-8087-28347d37824b"
+  },
+  {
+    "source": "https://www.tomshardware.com/feeds.xml",
+    "title": "Mainland Chinese exhibitors reportedly locked out of Computex 2026, as Taiwan entry permits stall — parties complain applications left pending or hit with last-minute documentation requests",
+    "link": "https://www.tomshardware.com/tech-industry/mainland-chinese-exhibitors-locked-out-of-computex-2026",
+    "published": "Tue, 02 Jun 2026 15:43:37 +0000",
+    "author": "Luke James",
+    "summary": "Mainland Chinese companies among the 219 listed mainland exhibitors at Computex 2026 in Taipei have been kept off the show floor by stalled entry permits.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "7237830d-9282-4ccd-ab17-85c35ec1d7f4"
+  },
+  {
+    "source": "https://www.wallpaper.com/feeds.xml",
+    "title": "Six things to see at 3 Days of Design 2026",
+    "link": "https://www.wallpaper.com/design-interiors/design-events/3-days-of-design-2026-copenhagen-preview",
+    "published": "Tue, 02 Jun 2026 15:09:43 +0000",
+    "author": "Francesca Perry",
+    "summary": "Copenhagen’s 3 Days of Design festival returns from 10-12 June 2026, with exhibitions and product launches following the theme of ‘Make this Moment Matter’",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "c1c4d736-27d4-41c4-91c0-63350e9b6faf"
+  },
+  {
+    "source": "https://www.whathifi.com/feeds.xml",
+    "title": "Topping’s new affordable DAC fits a whole lot of tech into its compact design",
+    "link": "https://www.whathifi.com/hi-fi/dacs/toppings-new-affordable-dac-fits-a-whole-lot-of-tech-into-its-compact-design",
+    "published": "Tue, 02 Jun 2026 15:44:40 +0000",
+    "author": "Ioan Hazell",
+    "summary": "The E50 II features hi-res support, app control and customisable EQ for £199",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "ef0b3897-906f-46a7-a814-80387120eeae"
+  },
+  {
+    "source": "https://www.whowhatwear.com/feeds.xml",
+    "title": "Just When You Thought It Disappeared, J.Law Brought This Controversial Colour Trend Back For Summer",
+    "link": "https://www.whowhatwear.com/fashion/celebrity-style/jennifer-lawrence-chartreuse-colour-trend-2026",
+    "published": "Tue, 02 Jun 2026 09:49:38 +0000",
+    "author": "Ava Gilchrist",
+    "summary": "Brace for impact.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "2bfd65fe-fd0d-411b-afcf-fdf7b8b64924"
+  },
+  {
+    "source": "https://www.windowscentral.com/feeds.xml",
+    "title": "I dug into the Windows 11 features insiders got in May 2026 and here’s what matters most",
+    "link": "https://www.windowscentral.com/microsoft/windows-11/i-dug-into-windows-11-features-that-insiders-received-in-may-2026-and-heres-what-you-need-to-know",
+    "published": "Tue, 02 Jun 2026 13:59:50 +0000",
+    "author": "Mauro Huculak",
+    "summary": "Windows 11 Insider builds in May 2026 introduced Screen tint, Voice Isolation, Start menu customization, Windows Ready Print, and more.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "8e1dc8f2-dcb4-4e2d-a866-9bec8eef21fd"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC026Q-5nFJh-sK6Pmyy4dCw",
+    "title": "How would the cast describe United Vampire Play? June 4 - July 12",
+    "link": "https://www.youtube.com/shorts/h8ocRaAouH8",
+    "published": "2026-05-29T22:00:03+00:00",
+    "author": "Lookingglass Theatre Company",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "cfd22804-92d1-4be4-82b6-1dd9fda4e465"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0a_pO439rhcyHBZq3AKdrw",
+    "title": "Indifference Kills Humor — Tom Segura",
+    "link": "https://www.youtube.com/shorts/XTNa6ik_l2s",
+    "published": "2026-06-02T13:00:24+00:00",
+    "author": "David Perell",
+    "summary": "*About the host* Hey! I’m David Perell and I’m a writer, teacher, and podcaster. I believe writing online is one of the biggest opportunities in the world today. For the first time in human history, everybody can freely share their ideas with a global audience. I seek to help as many people publish their writing online as possible. *Follow me* Apple: https://podcasts.apple.com/us/podcast/how-i-write/id1700171470 YouTube: https://www.youtube.com/@DavidPerellChannel Spotify: https://open.spotify.com/show/2DjMSboniFAeGA8v9NpoPv X: https://x.com/david_perell",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "7fa3819f-5b96-4033-9ebd-edbd86c6f242"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0BUoEkrQKuifZdb-1lub8A",
+    "title": "CHICAGO — RED HOT Sizzle Reel",
+    "link": "https://www.youtube.com/watch?v=ifvgKxjDNAk",
+    "published": "2025-12-19T19:03:28+00:00",
+    "author": "Chicago The Musical",
+    "summary": "Book your tickets now and join the party at the longest-running musical on Broadway. Keeping it hot since 1996.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "df2a4dbf-cf3b-42a9-b8b9-2054f0540686"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0jNg4hZbUqMr7sD0mece9g",
+    "title": "Paramount Theatre Seattle   | (206) 682-1414",
+    "link": "https://www.youtube.com/watch?v=d_LkblmqxFs",
+    "published": "2017-07-03T05:21:40+00:00",
+    "author": "Paramount Theatre Seattle",
+    "summary": "Our Site: http://www.paramounttheatreseattle.net/ The Theater provides a venue for entertainment and cultural affairs using state-of-the-art and updated technology. The easiest way to buy cheap concert tickets is to just purchase them online. Today, there are several good sites that specialize in helping people find the tickets they want for concerts, theaters, sports events and other such entertainment events. Ticket prices may be well below or above face value and will fluctuate with the market. To purchase tickets for all Paramount Theatre Seattle Events simply click on the show of interest or call our operators at any time. My Profile: https://www.youtube.com/channel/UC0jNg4hZbUqMr7sD0mece9g More Links: https://www.yelp.com/biz/paramount-theatre-seattle https://www.getfave.com/26307994-paramount-theatre-seattle",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "dc93f320-03c4-4231-80df-40331852a8eb"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0LrZO9wORIqn_aRJtKdgfA",
+    "title": "San Antonio Spurs vs Oklahoma City Thunder Full Game 7 Highlights - May 30, 2026 | NBA WCF",
+    "link": "https://www.youtube.com/watch?v=u5lxAbAotXc",
+    "published": "2026-05-31T03:02:49+00:00",
+    "author": "GAMETIME HIGHLIGHTS",
+    "summary": "🔥GIVEAWAY🔥 https://www.instagram.com/thegametimehighlights/ Follow @thegametimehighlights on Instagram to Enter! ◆GAMETIME HIGHLIGHTS is your home for ALL NBA HIGHLIGHTS! SUBSCRIBE Here: https://bit.ly/3S8ObFW #nbahighlights #nba #gametimehighlights This video was edited to follow youtube's fair use guidelines: Copyright Disclaimer under Section 107 of the copyright act 1976, allowance is made for fair use for purposes such as criticism, comment, news reporting, scholarship, and research.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "4ab07f59-9f29-4ffa-893a-c6c68eaf5112"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0MKBRS7teISJ5iGufoc_Iw",
+    "title": "Planning Commission - County of Santa Barbara - 05/27/26",
+    "link": "https://www.youtube.com/watch?v=SSot33KhGxw",
+    "published": "2026-05-28T08:31:33+00:00",
+    "author": "County of Santa Barbara — CSBTV20",
+    "summary": "Planning Commission - County of Santa Barbara - 05/27/26",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "be1e590c-943d-4064-ac49-b1d5941ea051"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0mpXp7Gcy2GmX6exBva70g",
+    "title": "ATLANTA OPERA SIDEBAR | Twilight of the Gods",
+    "link": "https://www.youtube.com/watch?v=ALFb_OqOyJM",
+    "published": "2026-05-27T18:48:21+00:00",
+    "author": "The Atlanta Opera",
+    "summary": "Director Tomer Zvulun and conductor Roberto Kalb discuss their approach to the final opera in the Ring Cycle.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "be688145-e0ad-499d-9f3d-230d11f29b37"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0noL-MX_kMr81iHXU2LSxw",
+    "title": "Spectacle & Slaughter | Pressure",
+    "link": "https://www.youtube.com/watch?v=KQVAUpQK45Q",
+    "published": "2026-05-29T14:17:46+00:00",
+    "author": "Working Title",
+    "summary": "'The world remembers D-Day, but few know the extraordinary story of the last minute decision that would change the course of history’. Pressure releasing in US Theatres today. Subscribe to Working Title: ‪@workingtitlefilms‬ Website: https://workingtitlefilms.com Instagram: https://instagram.com/workingtitlefilms Facebook: https://facebook.com/WorkingTitleFilms TikTok: https://tiktok.com/@workingtitlefilms",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "d4f05a93-cdd1-4e0b-bed6-006692f64ed8"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0nyU2GAhdM1dbgbWwBerBw",
+    "title": "In The Heights : Behind the Scenes Rehearsals",
+    "link": "https://www.youtube.com/shorts/LMcrysw1h-0",
+    "published": "2026-05-22T22:55:23+00:00",
+    "author": "Aurora Theatre",
+    "summary": "Set in the vibrant neighborhood of Washington Heights, Lin-Manuel Miranda’s In the Heights is a Tony Award-winning musical that pulses with infectious energy, rich storytelling, a dynamic blend of hip-hop, salsa, merengue, and soul, and is bursting with passion and heart. Closing Aurora’s 30th season, and voted by our audience’s as their favorite show in Aurora’s history, In the Heights is a celebration of family, resilience, and the pursuit of the American Dream. Buy Tickets: https://my.lvilleartscenter.com/OVERVIEW/142359/",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "d59e39c8-3774-45c7-8919-ee3e2ef8656c"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0QOM5-oQ2wCqPstBdCAyrw",
+    "title": "Jason Alexander: As Long As You're Asking",
+    "link": "https://www.youtube.com/shorts/t2jgnpkEIxY",
+    "published": "2026-06-02T15:29:24+00:00",
+    "author": "Chicago Shakespeare Theater",
+    "summary": "An evening of comedy, musical performance, and conversation with the Emmy and Tony award-winning star of stage and screen in which the audience determines what they want to know the most. Tickets: chicagoshakes.com",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "340fc6e3-9e60-4d4b-bdbf-03ed84ea9f8d"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0wVQ6StHvTc9sTY-Z44LkQ",
+    "title": "The 29 Best Blender Modeling Tutorials in 2026",
+    "link": "https://www.youtube.com/watch?v=tl9WEVmuzxk",
+    "published": "2026-06-01T15:02:57+00:00",
+    "author": "Film Stop",
+    "summary": "Learn pro-level Blender modeling with a step-by-step hard surface curriculum. Get 50% off with code FILMSTOP https://www.3dbeastacademy.com/a/2148284283/xdLM2Dgh The Playlist - https://youtube.com/playlist?list=PLb-YKIUQ84bkxFWGt-Dq6TEXR-6LDME7H&si=6DFCmAvWUFci4Xgn If you enjoyed or found value, drop a like!",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "23aae23c-45bf-4d13-a6bb-6507888b880d"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0Wwu7r1ybaaR09ANhudTzA",
+    "title": "Rueben Bain Jr.'s Combine interview has us ready to run through a brick wall 😤 #buccaneers #nfl",
+    "link": "https://www.youtube.com/shorts/Nmiolpci8WA",
+    "published": "2026-06-02T14:00:09+00:00",
+    "author": "Tampa Bay Buccaneers",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "7ea9ea7f-8fa2-451f-88e2-afb43e1cf2ff"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0yD_dcTxITdZXyw1vW7pIg",
+    "title": "Behind the Scenes with the Actors of Pride and Prejudice",
+    "link": "https://www.youtube.com/watch?v=aXyVOnLjO3o",
+    "published": "2026-04-21T21:41:59+00:00",
+    "author": "TheatreSquared",
+    "summary": "Chat with a few of our actors and find out why you shouldn’t have any prejudices against seeing our show 😉 Pride and Prejudice runs now - May 10th. Find tickets and more information at Theatre2.org/pride-prejudice ☕️✨",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "88943200-931e-4195-a234-38ec3146d12c"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC11MjaCTJzTdTYhePzxNdRQ",
+    "title": "Time Team Hunt For King Connor's Missing Irish Palace",
+    "link": "https://www.youtube.com/watch?v=Lz5_15WmaYI",
+    "published": "2026-05-31T19:00:01+00:00",
+    "author": "Unearthed History - Archaeology Documentaries",
+    "summary": "Three grueling three-day digs push the team to their absolute limits. First, they travel to Northern Ireland to investigate the legendary landscape of Owen Maka, searching for the lost third palace of the Iron Age King Connor. Next, in a Suffolk field overflowing with high-status Roman metalwork, they try to track down the timber foundations of a missing villa. Finally, they ascend the rugged mountains of Mallorca to map out a rare Copper Age community built by the enigmatic Beaker Folk. Can modern technology finally separate historical fact from ancient myth? Welcome to Unearthed History -- the home for all things archaeological! From ancient Roman ruins to buried medieval mysteries, we'll be bringing you award-winning documentaries that explore the remnants of long lost civilizations. Subscribe so you don't miss out. You can now become a History Hit member right here on YouTube! Join for access to a new exclusive documentary every week, and access to over 160+ of our documentaries presented by world renowned historians like Dan Snow, Eleanor Janega, Tristan Hughes, Mary Beard, Matt Lewis and more. Get an exclusive release every week by signing up here: https://bit.ly/4pyExyn Do you love uncovering the past, exploring historic sites, and venturing to distant lands? Join History Hit today and stream hundreds of exclusive documentaries, with new releases every week. Plus, enjoy ad-free access to our podcast network for even more history every week. To get in touch please email: owned-enquiries@littledotstudios.com. #UnearthedHistory #Archaeology #Documentary",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "20d5f83f-2921-48c9-9a05-fb167f058635"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC11Ven0Ko54NQbqMeirUpfg",
+    "title": "FAT Season Reveal 26 27",
+    "link": "https://www.youtube.com/watch?v=Il8mcVVWbsg",
+    "published": "2026-06-01T14:00:18+00:00",
+    "author": "Farmers Alley Theatre",
+    "summary": "🎭 Season 19 is officially here! Grab your Early Bird Flex Pass now through June 15th and receive one bonus ticket FREE to use during the season. ✨ Flex Pass holders also get early access to reserve seats before tickets go on sale to the general public on June 16! The best seats. The best savings. An extra night at the theatre. Don’t wait—this offer won’t last! 🎟️🎭✨ FLEX PASSES ON SALE NOW! https://www.farmersalleytheatre.com/ #farmersalleytheatre #season19 #seasonannouncement #theatrekalamazoo #announcement #musicals #musicaltheatre #livetheatre",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "ff0f08b3-329b-4381-aa9e-79ab648e15f1"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC15bpV1OhNXggDe9A5nQLTA",
+    "title": "LeBron James POSTGAME INTERVIEWS Los Angeles Lakers beat Toronto Raptors 131-125",
+    "link": "https://www.youtube.com/watch?v=fPd3qLR0z64",
+    "published": "2024-11-02T03:17:13+00:00",
+    "author": "NBA Regular Season",
+    "summary": "LeBron James POSTGAME INTERVIEWS Los Angeles Lakers beat Toronto Raptors 131-125",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "c34f36b0-ec77-46d3-9be7-d9366bd15595"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC15ThpbeQv6NkgYrup61SfA",
+    "title": "Planning Commission Meeting 6/01/2026",
+    "link": "https://www.youtube.com/watch?v=USuP--hAigU",
+    "published": "2026-06-02T13:41:54+00:00",
+    "author": "CityofSolvang",
+    "summary": "Solvang City Hall Broadcast",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "6150369c-dcf4-4843-936f-88dc81e8cab7"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC160Ln3rSb3Ym2iUxJasZVw",
+    "title": "Can You Identify These UFC KOs?",
+    "link": "https://www.youtube.com/watch?v=WvN3z4-po7w",
+    "published": "2026-05-31T17:35:49+00:00",
+    "author": "Paddy The Baddy",
+    "summary": "Go to https://surfshark.com/paddy or use code PADDY at checkout to get 4 extra months of Surfshark VPN! The official YouTube Channel for UFC fighter Paddy The Baddy Pimblett Follow Paddy The Baddy on Social Media: Instagram: @theufcbaddy TikTok: @theufcbaddy Twitter: @theufcbaddy Filmed & edited by: Blaise Knebels",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "d6c9abf3-7b2e-4f24-8e19-ac465dce45e0"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC16-FGJ4ceYvt7W4kRfTFyA",
+    "title": "NJT Presents God of Carnage - Cast Announcement",
+    "link": "https://www.youtube.com/shorts/pW42qgmpQQ4",
+    "published": "2026-05-19T22:51:03+00:00",
+    "author": "The J - St. Louis",
+    "summary": "We are excited to announce the cast of NJT's upcoming production of God of Carnage by Yasmina Reza, translated by Christopher Hampton, opening on Thursday, June 11: Bridgette Bassa as Annette Nick Freed as Alan Joel Moses as Michael Christina Rios as Veronica If you're excited about our cast, make sure you buy tickets at https://www.showpass.com/god-of-carnage/ before they're gone! #GodOfCarnage #StLouisTheatre #NJT #NewJewishTheatre #TheJStLouis | jccstl.com/njt",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "7e9393b8-7ab9-427c-b7c5-1dc0412cfa87"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1BdpFCsvKmqzetThZO9M6A",
+    "title": "MISCAST26 Worldwide Broadcast Extended thru MAY 26",
+    "link": "https://www.youtube.com/watch?v=tnjpF_LPUyc",
+    "published": "2026-05-20T16:18:21+00:00",
+    "author": "MCCTheater",
+    "summary": "You asked, we listened! Find the Miscast26 Worldwide Broadcast here until May 26, 2026: https://www.youtube.com/live/feXE0KeKtSc The MISCAST26 Worldwide Broadcast has broken records over the past week, reaching more theater lovers than ever before - so why let the fun stop here? We are extending the MISCAST26 Broadcast for one more week due to popular demand! Now is the perfect time to watch, re-watch, and share it with your friends, because the Worldwide Broadcast MUST GO on TUE MAY 26. Be sure to stream before it's gone for good!",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "3dcd5c9a-c392-4d55-9d5e-4070c7f9c53d"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1CEo3UAzB39fj1F2jf6tAQ",
+    "title": "Buellton - City Council Meeting - May 28, 2026",
+    "link": "https://www.youtube.com/watch?v=FNylPQxtUKg",
+    "published": "2026-05-29T17:01:27+00:00",
+    "author": "Buellton - City TV",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "4f6c1cd5-d623-429f-ae8b-69759f1ce1fe"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1DGpYiEiqBrQtYXFbLhMVQ",
+    "title": "Harper Beckham's Style Evolution From Baby Chic To Fashion Icon",
+    "link": "https://www.youtube.com/shorts/sYUuJE9V0fc",
+    "published": "2026-06-01T19:56:11+00:00",
+    "author": "Nicki Swift",
+    "summary": "Witness Harper Beckham's stunning transformation from a stylish toddler to a trend-setting fashion icon. #HarperBeckham #StyleEvolution #FashionIcon",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "181921a5-eef5-41ba-9421-cb95588b0361"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1es5fp8FEK1L0EgHjCvmtQ",
+    "title": "Rush work.",
+    "link": "https://www.youtube.com/shorts/GZzyVV5EACw",
+    "published": "2026-06-02T15:00:30+00:00",
+    "author": "Raiders",
+    "summary": "#nfl #shorts #fyp #reels #nflfootball #kwitypaye",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "63ce2f50-a23e-4286-a5b4-f98a7929a676"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC-1K8JAyndlyWACgndosXCw",
+    "title": "The Karate Kid: The Musical",
+    "link": "https://www.youtube.com/watch?v=dlfWeR9-kGQ",
+    "published": "2026-05-25T15:39:25+00:00",
+    "author": "Mirvish Productions",
+    "summary": "CANADIAN PREMIERE THE KARATE KID – THE MUSICAL brings the legendary 1984 film to life on stage. Don’t miss the unforgettable theatrical experience of the season as this heartfelt coming-of-age story takes flight with spectacular musical numbers and dazzlingly inventive choreography. Daniel LaRusso’s journey is reimagined through movement, music, and raw, energetic storytelling. At its heart is the powerful bond between Daniel and Mr. Miyagi, who teaches that karate isn’t about fighting, it’s about balance, dignity, and respect. A Tony Award®-winning design team transforms iconic cinematic moments into an emotionally charged, kinetic stage experience. Honouring the roots of the timeless story, this musical celebrates resilience, mentorship, and the quiet strength that bridges generations. Destiny is in your hands: Wax on – Wax off.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "8f1b8b5e-6a0a-477a-b7b0-681af53ae4b2"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1lgJkpCx_0SMzsvrTCdxPw",
+    "title": "#BOSJ33 is heading to the wire!",
+    "link": "https://www.youtube.com/shorts/lzDiCgsNTOg",
+    "published": "2026-05-29T05:10:26+00:00",
+    "author": "NEW JAPAN PRO-WRESTLING",
+    "summary": "日本語字幕・English subtitles You can enjoy the matches on NJPW World! Sign up Now▶ https://watch.njpwworld.com Exclusive News on NJPW events, wrestlers & more! Follow us on NJPW official SNS feeds! HP - https://www.njpw1972.com/ GOODS - https://shop.njpw1972.com/ FACEBOOK - https://www.facebook.com/newjapaneng/ TWITTER - https://twitter.com/njpwglobal INSTAGRAM - https://www.instagram.com/njpw1972/",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "71b6ab1b-b99a-4f79-b3d1-b735ec63483d"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1MIypF1CqevUorqhILzB6g",
+    "title": "AUGUST WILSON'S THE PIANO LESSON Production Trailer",
+    "link": "https://www.youtube.com/watch?v=t31YSFK5cqE",
+    "published": "2026-04-23T17:59:10+00:00",
+    "author": "cincyplay",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "197555a8-afa9-4841-b178-c2596962e1cb"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1Mx92GFTNBMn-rs7VmDCgg",
+    "title": "\"CHESS - Broadway Revival Review\"",
+    "link": "https://www.youtube.com/watch?v=yy8Rpy_-JHg",
+    "published": "2026-05-30T19:07:06+00:00",
+    "author": "It's Chris Smith Time!",
+    "summary": "Chris reviews the Broadway musical revival of CHESS, which he saw in April 2026 at the Imperial Theatre in New York, NY. CHESS is nominated for 5 Tony Awards, but sadly failed to nab a nomination for Best Revival of a Musical. The Tony Awards will air LIVE on June 7th on Pluto TV (for the first awards of the night) and CBS and Paramount+ for the main telecast. *** Since taping this video earlier this week, CHESS has posted its closing notice and will end on June 21, 2026, which was always Lea Michele's scheduled final performance. Therefore, Joanna \"JoJo\" Levesque's run in the show has been canceled.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "472279ae-3b3b-4b56-9975-6061445f808f"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1oigGPZ4A6atKCnj17ow8Q",
+    "title": "Israel Adesanya Is Grateful & Ready to RETURN | #UFCSeattle Fight Week",
+    "link": "https://www.youtube.com/watch?v=l1ICWZrlaSg",
+    "published": "2026-03-28T09:27:50+00:00",
+    "author": "FREESTYLEBENDER",
+    "summary": "An exclusive look inside Two Time UFC Middleweight Champion Israel 'The Last Stylebender' Adesanya's intense Fight Week for his return against Joe Pyfer at UFC Seattle on March 28. Israel visits the graves of Bruce Lee and his son Brandon Lee, cuts weight, responds to his fans and stares down Joe Pyfer. #israeladesanya #joepyfer #ufc #ufcseattle",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "0592fd4a-6057-4e13-bdd0-b5d89f86565d"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1s9576cQFdQq3QTtTxocmA",
+    "title": "206 Explicit Calls and a Burnt Car: The Murder Of Two Small-Town Girls",
+    "link": "https://www.youtube.com/watch?v=K8enpAFiZHg",
+    "published": "2026-06-01T18:30:03+00:00",
+    "author": "Real Crime",
+    "summary": "In a small Maryland community, local deputy sheriff Paul Farrell was convicted of murdering nineteen-year-old Kathy Ford after her burnt car was found near his trailer, only to be released eighteen years later when the state commuted his sentence due to a complete lack of physical evidence and allegations of severe police misconduct. The quiet, tight-knit communities of Gorman and Gormania were completely shattered in the winter of 1988 when nineteen-year-old Kathy Ford vanished without a trace. Working at her family’s local restaurant, Kathy was a beloved staple of the community, but behind the scenes, she felt trapped by her environment and a volatile relationship. Everything changed on a cold February afternoon when she received a series of bizarre phone calls from someone posing as a local official. Minutes later, she left the restaurant in a rush, never to be seen alive again. Make sure you subscribe to get your regular crime fix: youtube.com/c/RealCrime Real Crime On Spotify: https://open.spotify.com/show/0JLjqhHBRN8qMTGKikm97B?si=Fnshg5sfSxmljxiW7wJrZg Any queries, please contact us at: owned-enquiries@littledotstudios.com #truecrime #realcrime #crime",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "f2b6f57a-537b-47e3-a761-02d4b831fc43"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1s9bDwUFnpLsNy4o1QX0iw",
+    "title": "Diggs day 25’ !",
+    "link": "https://www.youtube.com/shorts/WgeVb_GVfJU",
+    "published": "2025-06-09T17:34:00+00:00",
+    "author": "Stefon Diggs",
+    "summary": "Love the kidsss….. dem boys was out there competing !!! Lol",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "293c027f-19b8-4272-9198-b44880475386"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_1TBgZ5FuGSdRlrrnyJU7w",
+    "title": "Come see my show LIVE in Washington DC June 13!! Spcial guests announced soon 👀#shorts #ufc #mma",
+    "link": "https://www.youtube.com/shorts/epKqqrgotfg",
+    "published": "2026-05-30T20:07:44+00:00",
+    "author": "Daniel Cormier",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "3bf5ff51-2e7e-4fd3-ba4b-cb884e61949d"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1-ufz1Py29sLaTvXN4lGYg",
+    "title": "On Sale Now: Erth's Dino Zoo LIVE On Stage!",
+    "link": "https://www.youtube.com/watch?v=8CVg7JfZ4W0",
+    "published": "2026-05-29T14:00:55+00:00",
+    "author": "Bergen Performing Arts Center",
+    "summary": "65 million years in the making! Erth’s DINOSAUR ZOO LIVE guides your family on a breath-taking tour that begins in pre-historic Australia. You’ll observe, meet and interact with an eye-popping collection of amazing life-like dinosaurs and other creatures in a theatrical performance that thrills and entertains kids while stimulating their imaginations in ways that forever connect them to their world. Brought to life by a team of skilled puppeteers, DINOSAUR ZOO is so extraordinarily real you may want to run and hide - but don’t! Don't miss it at #bergenPAC on April 25! Get tickets: https://www.bergenpac.org/events/detail/dino-zoo-live #ErthsDinoZoo #Dinosaurs #bergenPAC #ComingSoon",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "d55cd05b-3823-402c-85e1-fd699efe780e"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1w6pDb9Bgu5WeFI3pJ5iAg",
+    "title": "The backbone of European air and missile defense",
+    "link": "https://www.youtube.com/watch?v=3j4qNljCnxw",
+    "published": "2026-05-28T18:25:09+00:00",
+    "author": "RTX",
+    "summary": "The Patriot air and missile defense system is a cornerstone of shared European security, trusted by 19 nations worldwide, including nine European countries and eight NATO members. With collaborative European development, production, and sustainment efforts, the Patriot system has multiple assembly sites across the continent and a robust supply chain involving dozens of trusted partners. No other air and missile defense solution offers the same level of proven interoperability, joint training capabilities, and coordinated procurement frameworks. This makes Patriot the premier choice for nations prioritizing cutting-edge defense technology and seamless integration with allied forces. Explore how the Patriot system is shaping the future of defense in Europe and beyond: https://rtxcorp.co/4nRNxhj With more than 180,000 global employees, we push the limits of technology and science to redefine how we connect and protect our world.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "05045409-8e97-44e0-a417-a8788bcd032a"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC27JCqpAz5DZHS5uYiCMfOw",
+    "title": "The Lakers Are FINALLY Getting Their Swagger Back",
+    "link": "https://www.youtube.com/watch?v=SOeWXfWW9Kg",
+    "published": "2026-01-14T14:39:03+00:00",
+    "author": "GOAT",
+    "summary": "Get exclusive early access and $10 free on Polymarket when you sign up with my code GOAT, no deposit needed! https://polymarket-app.onelink.me/S8ac/goat Lost Angeles Lakers vs Atlanta Hawks",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "828da558-9e42-4e97-81a2-679de0b0af43"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2a0ENbCZqIO5C1fWXGXZXA",
+    "title": "LIVE: HC Dan Quinn Speaks To The Media Before Today's OTA",
+    "link": "https://www.youtube.com/watch?v=kccgmPLT_6o",
+    "published": "2026-06-02T15:46:51+00:00",
+    "author": "Washington Commanders",
+    "summary": "2026 TICKETS ON SALE NOW: https://bit.ly/42UPOyV Follow us on TikTok: https://www.tiktok.com/@commanders Follow us on Instagram: https://www.instagram.com/commanders Follow us on X: https://x.com/commanders Like us on Facebook: https://www.facebook.com/commanders Subscribe to the Washington Commanders YouTube channel!",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "5061321c-e7a0-4d4a-ae9a-896928a6d152"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2DWnHy2ne106gSUElEFPzQ",
+    "title": "Say “SHUT UP” to saying shut up!",
+    "link": "https://www.youtube.com/shorts/-NnKyE1H0Kk",
+    "published": "2026-05-21T21:11:05+00:00",
+    "author": "HEATHERS: The Musical",
+    "summary": "This week’s student guidance. See Lisa Ann Walter in Heathers The Musical now through June 22 only. #HeatherstheMusical",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "7d45a67c-5821-406a-80c9-e71d37651d5b"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eEGT06FrWFU6VBnPOR9lg",
+    "title": "Should Your Boyfriend Play Donkey Kong Bananza?",
+    "link": "https://www.youtube.com/watch?v=9Xi118VLFfs",
+    "published": "2025-11-26T02:48:07+00:00",
+    "author": "Girlfriend Reviews",
+    "summary": "We’re thrilled to announce our partnership with @predatorgaming and @intelgaming! #ad Donkey Kong Bonanza is a game about bananas, so to celebrate we went bananas editing this review on our brand-new Predator-powered setup — because that’s the power of Intel Inside®. Oh, Banana. Level up your own rig here: https://bit.ly/GFRpredator Patreon: patreon.com/girlfriendreviews Twitch: twitch.tv/girlfriendreviews X: @itsgfreviews Instagram: GirlfriendReviews",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "9d22b300-1cb6-4234-b2d8-bbf16a80056a"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2kIvLgdf-s1uEwzq6bNdzw",
+    "title": "Lompoc City Council 05 19 2026",
+    "link": "https://www.youtube.com/watch?v=aQ3-uPEJ_Hk",
+    "published": "2026-05-20T17:50:34+00:00",
+    "author": "City of Lompoc",
+    "summary": "Lompoc City Council 05 19 2026",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "ceb6537a-0828-4e4b-8c13-b67599ef23d7"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2PcJcBiF6U7k6PmvGYushQ",
+    "title": "Phil Hay (Destroyer, Ride Along) on navigating tricky disagreements between writers and directors",
+    "link": "https://www.youtube.com/shorts/cAkB_WaNJ7U",
+    "published": "2026-06-01T17:49:08+00:00",
+    "author": "Scriptnotes",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "ceee0ac2-c3b9-461a-b217-6e3cbb589a1b"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2pmfLm7iq6Ov1UwYrWYkZA",
+    "title": "@ArianaGrande - hate that i made you love me #ArianaGrande⁩",
+    "link": "https://www.youtube.com/shorts/bTwqPPuHaqw",
+    "published": "2026-06-01T16:30:41+00:00",
+    "author": "Vevo",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "b2304bda-cf33-4262-be80-8ca4a410fc1b"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2PryLg7hc4AAKSdbNnHxLw",
+    "title": "Unstoppable NBA Duos & Trios That Changed Basketball Forever! 🔥",
+    "link": "https://www.youtube.com/watch?v=IG1xHgWSolk",
+    "published": "2025-08-12T18:00:16+00:00",
+    "author": "NBA Analysis",
+    "summary": "Unstoppable NBA Duos & Trios That Changed Basketball Forever! 🔥 Get ready to relive the NBA’s most iconic duos and trios that dominated the court and defined eras! From Jordan & Pippen’s legendary Bulls to LeBron, Wade & Bosh’s Miami Heat “Big Three,” and the Splash Brothers plus Draymond Green’s Warriors, we break down the greatest partnerships in basketball history. Who’s the GOAT duo or trio? Watch, comment your pick, and join the debate! Don’t forget to like, subscribe, and share for more epic NBA content! #NBA #NBADuos #NBAKings #BasketballLegends #NBAHistory #NBAStars #SportsTalk #BleacherReport #ESPN #NBAHighlights #NBAPlayoffs #GreatestPlayers NBA duos, NBA trios, greatest NBA duos, greatest NBA trios, Michael Jordan Scottie Pippen, LeBron James Dwyane Wade Chris Bosh, Shaquille O’Neal Kobe Bryant, Golden State Warriors trio, Splash Brothers Draymond Green, Larry Bird Kevin McHale Robert Parish, Tim Duncan Tony Parker Manu Ginobili, NBA dynasties, NBA championship teams, best NBA partnerships, basketball legends, NBA history, NBA greatest players",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "c56d3797-8b58-4434-9a48-d367ad8aa951"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2Qw1dzXDBAZPwS7zm37g8g",
+    "title": "As part of EMERGENT with Levi’s®, lordkez navigates the quiet limbo of 5:01pm. #lordkez #levis",
+    "link": "https://www.youtube.com/shorts/1MQg1EgJa3Y",
+    "published": "2026-06-01T17:23:26+00:00",
+    "author": "COLORS",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "f289e0a9-6332-4b66-b070-61f9489ea66b"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2Stn8atEra7SMdPWyQoSLA",
+    "title": "Finding More Than We Expected at the Rarely-Seen Ancient Megalithic Site of Mendes!",
+    "link": "https://www.youtube.com/watch?v=o06h0PhNWPY",
+    "published": "2026-05-29T04:58:58+00:00",
+    "author": "UnchartedX",
+    "summary": "Support UnchartedX!: https://unchartedx.com/support Become a patron - lots of exclusive stuff (including this video, ad-free) https://www.patreon.com/c/unchartedx The ancient site of Mendes - once, a thriving settlement, the capital of the 16th nome of ancient egypt with roots going back to pre-dynastic Ancient Egypt. Today, a rarely seen or discussed megalithic ruin, with secrets hiding in its rubble and just below the surface. Join me as we explore ancient Mendes, known as Tell el Ruba, and get into the history of this site along with a full 'special-permission' site visit. We found some remarkable artifacts here, much more than we expected. Not just the spectacular granite Naos, but also evidence for the ancient hard stone vases and the same machining and stone cutting witness marks found at sites like Abu Sir, and the great pyramids of the Giza Plateau. Chapterized, for your comfort. Please consider supporting UnchartedX via the value for value model at https://unchartedx.com/support links: Join us on the UnchartedX Primordial Egypt Tour, December 6-21, 2026 https://unchartedx.com/primordial2026 Ancient vases are fakes…. Again?? UX Article: https://unchartedx.com/site/2026/05/20/precise-vases-are-fakes-again/#more-4541 Videos referenced: Tanis and the Largest Stone Statue: https://youtu.be/LrPZM8ee690 Temple of Bastet: https://youtu.be/f1WKVWAsQj8 Ancient Precision Stone Jars: https://youtu.be/7LEt8VM42PY Machined Artifacts Below the Step Pyramid: https://youtu.be/jHK2-MoR9Fs Changing the Game - Ancient Precision Vases: https://youtu.be/WAyQQRNoQaE Ancient Vases Update (More Precision): https://youtu.be/PrhFnai2TGs Ancient Computers? Vase Design: https://youtu.be/Hxg5cgdOz-Y Ancient Precision Confirmed, Vase Inspections: https://youtu.be/QzFMDS6dkWU Live Walkthrough Below the Step Pyramid: https://youtu.be/iw_9He8fXxQ Provenance Clip (Ancient Vases): https://youtu.be/QFPQ7jtLgB0 Changing History, Ancient Vases (latest 2 hour overview): https://youtu.be/YqGoaWPzxd0 New Finds at Abu Sir: https://youtu.be/qsIPLc1Auoo Ancient High Tech: Machining: https://youtu.be/6KUDu40BC5o Ancient High Tech: Precision: https://youtu.be/YZFN29FdCM0 Ancient High Tech: Logistics: https://youtu.be/rQwWtEHE5FE Tale of Two Industries: https://youtu.be/ixTTvRGk0HQ Ancient Egyptian Tube Drills: https://youtu.be/KFuf-gBuuno Ancient Egyptian Stone Cutting in Basalt: https://youtu.be/-AUDBFqn8EM Music: Deos - 50 Dollar Dynasty https://www.fiftydollardynasty.com/ Scott Gratton Tracks Bumper Music - Brothers of the Serpent Podcast Many thanks to my good friends Kyle and Russ Allen for the footage! UnchartedX website: https://UnchartedX.com UnchartedX Merch store: https://unchartedx.dashery.com Support Links - all details at https://unchartedx.com/support https://www.patreon.com/c/unchartedx https://www.subscribestar.com/unchartedx https://unchartedx.locals.com/ Bitcoin/crypto wallet send address: bc1qtg5kaq0s7434fsulm7w94zsqkww57ueel4f4ed many more digital currencies available - just ask! Join this channel to get access to perks: https://www.youtube.com/channel/UC2Stn8atEra7SMdPWyQoSLA/join I stream live at https://www.youtube.com/@unchartedxlive and https://twitch.tv/unchartedx UnchartedX Videos also available on Spotify and Rumble I have a 2nd YouTube channel for more content https://www.youtube.com/@unchartedxlive UnchartedX Discord: https://discord.gg/BQRQMMR 0:00 Coming up…. 1:32 Introduction, Getting to the Site 6:15 Mendes Overview, Location, Available Info 11:48 Rare Mendes Books 18:17 Mendes History, Symbology 27:31 Site Visit Begins, Open Air Museum 37:44 Finding Ancient Vase Fragments 46:06 Crazy Polish, Bullnoses, Ram Boxes, Sunken Temple 54:01 The Great Granite Naos 1:04:43 Circular Sawn Basalt Floor Blocks 1:09:35 Conclusion, Thanks, V4V #pyramid #egypt #history",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "47a9d908-3404-41e7-8bac-d83c41ee2cb0"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2UxiAccH3jI5ZTPQW0tnFw",
+    "title": "On a mission #angadbisht",
+    "link": "https://www.youtube.com/shorts/_2w9HGbDiCo",
+    "published": "2026-05-30T11:03:46+00:00",
+    "author": "Angad Bisht",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "d20e05e3-6e59-4ac4-8000-c33db0925f54"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2wKfjlioOCLP4xQMOWNcgg",
+    "title": "🔴 LIVE! - WINNING with my ICON SKIN in FORTNITE!",
+    "link": "https://www.youtube.com/watch?v=Jq4mSnxnC6s",
+    "published": "2026-06-02T08:52:11+00:00",
+    "author": "Typical Gamer",
+    "summary": "Make sure to go buy the Typical Gamer Icon bundle in the item shop! Use code TYPICALGAMER in the item shop 💙 (Epic Partner) ❤️ SUBSCRIBE! ► http://bit.ly/SubToTG 🎮 I build Fortnite games with my studio JOGO ⭐ Follow us in Fortnite for new maps and updates first 👇 https://www.fortnite.com/@TypicalGamer https://www.fortnite.com/@JOGO 💬 Join the Discord: https://discord.gg/TypicalGamer 🐦 Twitter: https://twitter.com/TypicalGamer 📸 Instagram: https://instagram.com/typicalgamer 🧢 Shop Merch: https://typical.store Music by Epidemic Sound: https://www.epidemicsound.com",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "bdf59f36-e8a4-4bfe-8d8b-cc2bd2da7745"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2WTyXjB87E6Xk98NQA6Fow",
+    "title": "Spring Awakening Music Video",
+    "link": "https://www.youtube.com/watch?v=dNeJ0_6Nk3s",
+    "published": "2020-03-06T01:14:43+00:00",
+    "author": "Serenbe Playhouse",
+    "summary": "Ahead of the site-specific production of Spring Awakening at Serenbe Playhouse, here is a music video of the cast's rendition of “Touch Me” from the Tony-winning Duncan Sheik and Steven Sater musical. The staging, co-directed and choreographed by Jordan Nichols and Travis Bradley, launches Serenbe's 11th season, under the leadership of Associate Artistic Director and Director of Production Joel Coady. Performances, set once again in the natural woods of the community, begin March 18 and are scheduled to run through April 12. Full credits at www.serenbeplayhouse.org/spring-awakening",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "e6b5bce3-1841-41ad-8336-98f9c4b8ca2e"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2YKXCQ8wt1RFpQEELwILCQ",
+    "title": "Merch 🤝 Independent Artists @fancyhagoodofficial Watch #sxsw The Music Blueprint.",
+    "link": "https://www.youtube.com/shorts/lvGCp44Vyng",
+    "published": "2026-05-29T18:00:17+00:00",
+    "author": "SXSW",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "05ac9eaa-6747-45a8-87a6-edd1a6b7df8f"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC38BDK3SVRHB6hmBY-7fU6Q",
+    "title": "2026 Nevada High School Musical Theater Awards at The Smith Center",
+    "link": "https://www.youtube.com/watch?v=JJqk4fqmO-U",
+    "published": "2026-05-22T21:54:41+00:00",
+    "author": "The Smith Center for the Performing Arts",
+    "summary": "🎭🏆The official 2026 Nevada High School Musical Theater Awards recap video has arrived! 🏆🎭 Many thanks to the hardworking #TheatreKids and educators from 27 schools across Nevada that participated—it's truly one of our favorite shows to work on every year.🫶 Be sure to follow us on Instagram and TikTok at @smithcenterlv for more 2026 #NVHSMTA video highlights, including featured school production numbers, finalist solo performance clips and winner interviews.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "ae33c5f2-42a0-482e-a663-f071729e7090"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3dW2nkuO82xKUjpCG3hoBQ",
+    "title": "Cabaret at the Kit Kat Club | Matt Willis and Katie Hall Official Show Trailer",
+    "link": "https://www.youtube.com/shorts/Ya3PINraxCM",
+    "published": "2026-02-19T11:30:00+00:00",
+    "author": "Cabaret at the Kit Kat Club",
+    "summary": "Matt Willis (Emcee) and Katie Hall (Sally Bowles) are now starring in the seven-time Olivier Award winning London production of CABARET AT THE KIT KAT CLUB. One of the most successful musicals of all time, this new West End production features the songs Willkommen, Don’t Tell Mama, Mein Herr, Maybe This Time, Money and the title number Cabaret – with Berlin’s famous Kit Kat Club brought to life through the transformation of London’s Playhouse Theatre. Matt and Katie star in the London production until Saturday 23rd May only. Book tickets from £35 direct via box office: kitkat.club",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "50537757-f15e-4ad0-a8af-d172f0db2b25"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3eolSinYbBNtDGuHWanlHw",
+    "title": "This poor boy wore his heart out on his sleeve.",
+    "link": "https://www.youtube.com/shorts/g_uJOtXxG_A",
+    "published": "2026-06-01T01:51:04+00:00",
+    "author": "Hadestown",
+    "summary": "Today, we raise our cups to Joshua Colley as he takes his final bow as Orpheus.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "dac45196-0032-41f6-93c6-e88f4cf4ac68"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3FeUnlHLdpKG7OBV1z1piQ",
+    "title": "Food Waste Freddie’s Organics Processing in Northern Santa Barbara County",
+    "link": "https://www.youtube.com/watch?v=CBzk4KdQ-Kk",
+    "published": "2024-02-21T18:02:55+00:00",
+    "author": "Santa Barbara County Public Works",
+    "summary": "As of January 2022, Californians must divert all organic waste from the landfill, including food scraps, yard waste, soiled paper products, and other organics. In this video, Food Waste Freddie learns how composting is both easy and fun. The organics diversion program in this video is available only for the unincorporated Lompoc and Santa Maria Valleys. Residents can pick up free kitchen pails from 620 West Foster Road during normal business hours. For more information on diverting organics from the landfill, visit www.lessismore.org/organics",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "21415a97-5139-42fb-a053-16cdba307d93"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3HPbvB6f58X_7SMIp6OPYw",
+    "title": "Dylan Harper's incredible potential",
+    "link": "https://www.youtube.com/watch?v=SSoqvKr-9jA",
+    "published": "2026-05-31T03:59:51+00:00",
+    "author": "Thinking Basketball",
+    "summary": "If you or someone you know experienced serious mental health struggles as a result of social media use, you may be entitled to a potential recovery of over $1,000. Go to https://morganmorganpa.sjv.io/c/3468083/3841482/23429?sharedid=thinkingbasketball to submit a claim now. Use signup code GREAT DAY for $300 off Sports Business Classroom at Summer League: https://www.sportsbusinessclassroom.com (Originally a member's profile.) We look at Dylan Harper's ceiling through the lens of his finish skills, reaction time, size-strength combination and more. Become a member to access all full length videos: https://www.youtube.com/channel/UC3HPbvB6f58X_7SMIp6OPYw/join Podcast: https://open.spotify.com/show/12kpkAvUj6LGxzViDIH0qH Support at Patreon: https://www.patreon.com/thinkingbasketball Book: https://www.amazon.com/Thinking-Basketball-Ben-Taylor/dp/1532968175 Website: https://www.thinkingbasketball.net Twitter: @elgee35 Find additional Thinking Basketball content on the NBA App, the More Thinking Basketball channel and the Thinking Basketball podcast. Stats courtesy: http://www.pbpstats.com @bballport https://www.basketball-reference.com https://stats.nba.com ----- Footage in this video is owned by the NBA and its partners. It is intended for critique and education. Music by csus (instrumental) #ThinkingBasketball",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "3379623e-dcf2-4cd9-8f03-930c94b21c5f"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3I2GFN_F8WudD_2jUZbojA",
+    "title": "corto.alto - Full Performance (Live on KEXP)",
+    "link": "https://www.youtube.com/watch?v=pV9VuvJsJXs",
+    "published": "2026-06-02T15:00:33+00:00",
+    "author": "KEXP",
+    "summary": "http://KEXP.ORG presents corto.alto performing live in the KEXP studio. Recorded March 30, 2026. Songs: THIEF 00:18 BULLETPROOF 07:47 Vaquita (51) 16:05 Chubbby (48) 20:55 Liam Shortall - Bass, Electronics, Keys, Trombone Mateusz Sobieski - Saxophone Graham Costello - Drums Host: Larry Mizell, Jr. Audio Engineer: Julian Martlew Audio Mixer: Liam Shortall Mastering Engineer: Matt Ogaz Cameras: Jim Beckmann, Carlos Cruz, Scott Holpainen & Luke Knecht Editor: Luke Knecht https://cortoalto.com http://kexp.org Join this channel to get access to perks: https://www.youtube.com/channel/UC3I2GFN_F8WudD_2jUZbojA/join",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "adbe4723-6339-4577-b3e9-a72f7897d3f5"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3ifTl5zKiCAhHIBQYcaTeg",
+    "title": "ryscu - BOYS",
+    "link": "https://www.youtube.com/watch?v=8bC6s-tilPE",
+    "published": "2026-05-29T20:20:50+00:00",
+    "author": "Proximity",
+    "summary": "ryscu - BOYS Stream: https://proximity.foundry.ac/boys Follow Proximity on: Join the Notification Squad! Click the 🔔Bell. ✘ Prox Spotify Playlist!: http://spoti.fi/Proximity ✘ Proximity Instagram: http://instagram.com/Proximity ✘✘ Discord! :) - http://discord.gg/Proximity - Proximity Merch: http://prxmusic.com/collections ryscu: https://www.instagram.com/iamryscu https://www.tiktok.com/@ryscumusic https://soundcloud.com/ryscu ⚡Copyright Free Music!⚡ http://bit.ly/CopyrightFreePRX #electronicmusic #dubstep #bassmusic",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "8855bc02-82a3-4b66-a8cf-21b90f4de149"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3L9XPe0_FGfRG-CMGtBvFg",
+    "title": "You Will Never See Anything Like This Again",
+    "link": "https://www.youtube.com/watch?v=SBRwgCSbNxs",
+    "published": "2026-05-01T19:40:20+00:00",
+    "author": "JxmyHighroller",
+    "summary": "Use my code for 10% off your next SeatGeek order*: https://seatgeek.onelink.me/RrnK/JXMY10 Sponsored by SeatGeek. *Restrictions apply. Max $20 discount",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "8ddd5f5d-dd46-44d8-8f74-cf3aea72206e"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3mWejHzgH1cq_Lwcnp-0Og",
+    "title": "Georgetown Palace Theatre Education Programs Build Skills for Life",
+    "link": "https://www.youtube.com/watch?v=37wQIvwEe-U",
+    "published": "2026-02-04T18:47:15+00:00",
+    "author": "Georgetown Palace Theatre",
+    "summary": "Learn more about the Education Programs at the Georgetown Palace Theatre.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "89d00bdb-1780-4f2b-8840-89f0a9adf52b"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3nPaf5MeeDTHA2JN7clidg",
+    "title": "The Live Service Craze Is ENDING",
+    "link": "https://www.youtube.com/watch?v=M0snexs-7KM",
+    "published": "2026-05-31T15:25:27+00:00",
+    "author": "Bellular News",
+    "summary": "Huge thanks to FlexiSpot for sponsoring today's video! Get the best deals using the links below: 🇺🇸 Use code YTE7P50 for extra $50 OFF E7 Pro Desk: https://go.flexispot.com/BellularNews-E7Pro 🇺🇸 Use code C750 for $50 OFF C7 Morpher Chair: https://go.flexispot.com/BellularNews-C7Morpher 🇬🇧 8% off sitewide (May 25–31): https://go.flexispot.co.uk/bellular-sale 🇬🇧 E7 Pro Desk: https://go.flexispot.co.uk/bellular-e7pro 🇬🇧 C7 Morpher Chair: https://go.flexispot.co.uk/bellular-morpher Sega's Super Game is dead. After years chasing an online AAA live-service hit, Sega is lowering F2P priority, moving 100+ developers toward full-game development, and betting again on mainstay IP. That sounds like good news for players sick of live-service slop, but Sega's next problem is whether its premium games can survive the same impossible expectations. Join us at http://bellular.games for early access content, 20 editions of 'Loading Screen' a month and to support our team! 00:00 The Super Game Is Dead 00:40 Five Years Of Bad Bets 04:50 Why Sega Backed Off 08:49 The Mess They Made 11:46 Sega's Future Is The Past",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "851a50b7-212e-4dd1-9ace-77c4df8acbee"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3osNjJeuDdvyALIEP-nh0g",
+    "title": "How a Director’s Bible Saved His Movie From Disaster",
+    "link": "https://www.youtube.com/watch?v=fskc7vBWcbw",
+    "published": "2023-09-29T19:48:33+00:00",
+    "author": "Behind the Curtain",
+    "summary": "Sign up to Milanote for free with no time-limit: https://milanote.com/behindthecurtain One of the most famous movies in the world was almost never released. The only thing that saved it was a secret notebook. The story of The Godfather's Notebook. Subscribe: https://www.youtube.com/@behindthecurtain?sub_confirmation=1 Chapters: 00:00 Intro 00:24 The Setup 02:40 Coppola Takes Over 03:53 The Secret Notebook 09:16 Production is Hell 13:09 The Editing Room Love Movies? Learn how your favorite movie was made: https://www.youtube.com/playlist?list=PL0OEVTUCV1gbyY_nz7ZjtInhqMOH4oMjd Comment below a film or TV show you want me to research next. The Godfather is a 1972 American epic crime film directed by Francis Ford Coppola, who co-wrote the screenplay with Mario Puzo, based on Puzo's best-selling 1969 novel of the same title. The film stars Marlon Brando, Al Pacino, James Caan, Richard Castellano, Robert Duvall, Sterling Hayden, John Marley, Richard Conte, and Diane Keaton. It is the first installment in The Godfather trilogy, chronicling the Corleone family under patriarch Vito Corleone (Brando) from 1945 to 1955. It focuses on the transformation of his youngest son, Michael Corleone (Pacino), from reluctant family outsider to ruthless mafia boss. ABOUT BEHIND THE CURTAIN Experience the crazy and unique stories about how your favorite movies and tv shows were made. How a Secret Notebook Saved Cinema https://youtu.be/fskc7vBWcbw #videoessay #thegodfather #screenwriting",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "2b7b10a1-92e3-49e0-ba4c-be420554dfea"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3qbvcgOHXRIFIofXyd1vBw",
+    "title": "That time Kid Rock got beat by karaoke",
+    "link": "https://www.youtube.com/shorts/S3_cztEsgXY",
+    "published": "2026-05-31T20:00:33+00:00",
+    "author": "Mic The Snare",
+    "summary": null,
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "f9945727-3d37-4741-b1b0-d7ec78e12e75"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3R-xanNgtoa8b7gpVexVlA",
+    "title": "Cindy Sherman, Untitled Film Still #21",
+    "link": "https://www.youtube.com/watch?v=4uHd3emofBQ",
+    "published": "2026-06-02T13:51:24+00:00",
+    "author": "Smarthistory",
+    "summary": "Cindy Sherman, Untitled Film Still #21, 1978, gelatin silver print, 18 x 24 cm (Art Bridges Foundation) © Cindy Sherman A conversation with Dr. Sarah Myers, Associate Curator, Art Bridges Foundation, and Dr. Beth Harris, Smarthistory This video was made possible by the generosity of the Art Bridges Foundation",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "5eafae7b-e6dd-4454-b818-e204daa21e93"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3SUr9duoxSOxou6VlLcf7Q",
+    "title": "Mill Mountain Theatre's 2024 Season",
+    "link": "https://www.youtube.com/watch?v=7an0SCNUCec",
+    "published": "2023-11-01T17:00:06+00:00",
+    "author": "Mill Mountain Theatre",
+    "summary": "With exciting titles get ready to share more laughs, thrills and memories at Mill Mountain Theatre during our 60th Season together.",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "ccb0016b-b8f3-417a-8474-d8c14196a73f"
+  },
+  {
+    "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3vvdOvioadhn-ZNjOa-tqg",
+    "title": "Cognizant Major League Cricket Returns For Another Season 🏏",
+    "link": "https://www.youtube.com/watch?v=M0GxPadPVgo",
+    "published": "2026-05-27T18:54:43+00:00",
+    "author": "MLC Network",
+    "summary": "Cognizant Major League Cricket returns June 18 with elite international superstars, heated rivalries, and unforgettable live action. 💥 Join us at a match this summer 👇 Grand Prairie, TX ➡️ June 18-21 & July 8-12 Oakland, CA ➡️ June 24-28 & July 15-18 Los Angeles, CA ➡️ July 1-5 🎟️: bit.ly/mlc-tickets-26",
+    "jobId": "d85c721e-acc7-431f-a126-c15c531d2f83",
+    "taskId": "d0a80848-57ab-4dbe-8a78-47abd9700b64"
+  }
+]

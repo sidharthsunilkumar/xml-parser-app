@@ -1,0 +1,15 @@
+{
+  "name": "xml-parser-processor",
+  "version": "1.0.0",
+  "description": "Worker that processes XML feed tasks from RabbitMQ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.4",
+    "axios": "^1.7.2",
+    "mongodb": "^6.8.0",
+    "xml2js": "^0.6.2"
+  }
+}

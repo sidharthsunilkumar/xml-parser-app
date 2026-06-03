@@ -1,0 +1,387 @@
+/* ── Page layout ───────────────────────────────────────────── */
+.sj-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ── Header nav actions ──────────────────────────────────────── */
+.sj-nav-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sj-see-jobs-btn {
+  padding: 9px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.sj-see-jobs-btn:hover { background: rgba(255, 255, 255, 0.28); }
+
+.sj-btn {
+  padding: 9px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  background: #fff;
+  color: #1d4ed8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.sj-btn:hover:not(:disabled) { opacity: 0.88; }
+.sj-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Main content ────────────────────────────────────────────── */
+.sj-main {
+  flex: 1;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px 32px;
+  box-sizing: border-box;
+}
+
+/* ── Job card ────────────────────────────────────────────────── */
+.sj-job-card {
+  background: #ffffff;
+  border: 1px solid #e0e4ef;
+  border-radius: 14px;
+  padding: 26px 30px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.sj-job-id {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sj-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+.sj-job-id code {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-h);
+  background: none;
+  padding: 0;
+}
+
+/* ── Stat row ────────────────────────────────────────────────── */
+.sj-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.sj-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 28px;
+  border-right: 1px solid var(--border);
+}
+
+.sj-stat:first-child { padding-left: 0; }
+.sj-stat:last-child  { border-right: none; }
+
+.sj-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+  margin: 0 8px;
+}
+
+.sj-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-h);
+}
+
+.sj-stat.ok   .sj-stat-value { color: #16a34a; }
+.sj-stat.fail .sj-stat-value { color: #dc2626; }
+.sj-stat.pending .sj-stat-value { color: var(--text-h); }
+
+.sj-stat-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #4b5563;
+}
+
+.sj-date {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+/* ── Badge ───────────────────────────────────────────────────── */
+.sj-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sj-badge.ok, .sj-badge.completed {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+}
+.sj-badge.failed {
+  background: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+}
+.sj-badge.in-progress {
+  background: rgba(234, 179, 8, 0.15);
+  color: #ca8a04;
+}
+
+/* ── Progress bar ────────────────────────────────────────────── */
+.sj-progress {
+  display: flex;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--border);
+  overflow: hidden;
+  margin-top: 18px;
+}
+
+.sj-progress-bar {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.sj-progress-bar.ok   { background: #22c55e; }
+.sj-progress-bar.fail { background: #ef4444; }
+
+/* ── Tasks section ───────────────────────────────────────────── */
+.sj-tasks-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.sj-tasks h2 {
+  margin: 0;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--text-h);
+}
+
+.sj-tasks-count {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+/* ── Table ───────────────────────────────────────────────────── */
+.sj-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e0e4ef;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+}
+
+.sj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.sj-table thead th {
+  background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1e40af;
+  opacity: 1;
+  font-weight: 700;
+  border-bottom: 1px solid #bfdbfe;
+  white-space: nowrap;
+}
+
+.sj-table thead th:first-child { border-radius: 12px 0 0 0; }
+.sj-table thead th:last-child  { border-radius: 0 12px 0 0; }
+
+.sj-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.sj-table tbody tr:last-child { border-bottom: none; }
+
+.sj-table tbody tr:hover { background: #f5f7fa; }
+
+.sj-table tbody tr.ok   { border-left: 3px solid #22c55e; }
+.sj-table tbody tr.failed { border-left: 3px solid #ef4444; }
+
+.sj-table td {
+  padding: 11px 14px;
+  vertical-align: middle;
+  color: var(--text-h);
+}
+
+.sj-col-num    { width: 48px; color: #6b7280; text-align: center; }
+.sj-col-status { width: 100px; }
+.sj-col-source { word-break: break-all; color: #1f2937; }
+.sj-col-result { width: 180px; }
+.sj-col-id     { width: 300px; }
+
+.sj-col-id code {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #374151;
+  background: none;
+  padding: 0;
+}
+
+.sj-records { color: #16a34a; font-weight: 500; }
+.sj-error   { color: #dc2626; word-break: break-word; }
+
+/* ── Upload section ──────────────────────────────────────────── */
+.sj-upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 52px 32px 36px;
+}
+
+.sj-dropzone {
+  width: 100%;
+  max-width: 560px;
+  border: 2.5px dashed #bfdbfe;
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 52px 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  user-select: none;
+}
+
+.sj-dropzone:hover {
+  border-color: #60a5fa;
+  background: #f5f9ff;
+  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.13);
+}
+
+.sj-dropzone.dragging {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 6px 32px rgba(59, 130, 246, 0.22);
+  transform: scale(1.015);
+}
+
+.sj-dropzone.uploaded {
+  border-color: #22c55e;
+  border-style: solid;
+  background: #f0fdf4;
+}
+
+.sj-dz-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.sj-dz-icon {
+  font-size: 52px;
+  line-height: 1;
+}
+
+.sj-dz-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.sj-dz-sub {
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.sj-dz-hint {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.sj-dz-filename {
+  font-size: 17px;
+  font-weight: 700;
+  color: #16a34a;
+  word-break: break-all;
+}
+
+.sj-dz-change {
+  font-size: 14px;
+  color: #2563eb;
+  cursor: pointer;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 4px;
+}
+.sj-dz-change:hover { color: #1d4ed8; }
+
+.sj-upload-error {
+  margin-top: 14px;
+  font-size: 15px;
+  color: #dc2626;
+  text-align: center;
+}
+
+.sj-start-btn {
+  margin-top: 28px;
+  padding: 14px 56px;
+  font-size: 17px;
+  font-weight: 700;
+  background: #1d4ed8;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.12s;
+  box-shadow: 0 4px 18px rgba(29, 78, 216, 0.32);
+}
+
+.sj-start-btn:hover:not(:disabled) {
+  background: #1e40af;
+  box-shadow: 0 6px 28px rgba(29, 78, 216, 0.44);
+  transform: translateY(-2px);
+}
+
+.sj-start-btn:disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  box-shadow: none;
+  cursor: not-allowed;
+}

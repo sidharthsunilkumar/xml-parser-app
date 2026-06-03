@@ -1,0 +1,129 @@
+.saj-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.saj-main {
+  flex: 1;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 32px;
+  box-sizing: border-box;
+}
+
+/* ── Cards ───────────────────────────────────────────────────── */
+.saj-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e0e4ef;
+  border-radius: 14px;
+  padding: 24px 22px 24px 28px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border-left: 5px solid #3b82f6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.saj-card:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.13);
+  transform: scale(1.018) translateY(-3px);
+}
+
+.saj-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.saj-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.saj-job-id-wrap {
+  font-size: 15px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.saj-job-id {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: #000000;
+  background: none !important;
+  padding: 0 !important;
+}
+
+/* ── Stat row ────────────────────────────────────────────────── */
+.saj-stats-row {
+  display: flex;
+  gap: 0;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.saj-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 24px 6px 0;
+  margin-right: 24px;
+  border-right: 1px solid var(--border);
+}
+
+.saj-stat:last-child {
+  border-right: none;
+}
+
+.saj-stat-num {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000000;
+}
+
+.saj-stat.ok  .saj-stat-num { color: #16a34a; }
+.saj-stat.fail .saj-stat-num { color: #dc2626; }
+
+.saj-stat-lbl {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #4b5563;
+  margin-top: 3px;
+}
+
+/* ── Progress bar ────────────────────────────────────────────── */
+.saj-progress {
+  display: flex;
+  height: 5px;
+  border-radius: 4px;
+  background: var(--border);
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.saj-bar {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+.saj-bar.ok   { background: #22c55e; }
+.saj-bar.fail { background: #ef4444; }
+
+/* ── Meta ────────────────────────────────────────────────────── */
+.saj-meta {
+  font-size: 15px;
+  color: #374151;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
